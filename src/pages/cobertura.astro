@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company, coverage } from "../data/site";
+---
+
+<BaseLayout
+  title="Cobertura | REUTER IT NETWORKS"
+  description="Cobertura en toda Cordoba y alcance nacional segun proyecto."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Cobertura geografica</p>
+        <h1>Trabajamos en toda la provincia de Cordoba y podemos acompañar proyectos de mayor alcance.</h1>
+        <p class="lead">
+          La cobertura no es un detalle menor: forma parte de la propuesta de valor porque
+          habla de capacidad de respuesta, organizacion y ejecucion.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-stack">
+          <span class="panel-chip">Forma de trabajo</span>
+          <ul class="hero-list">
+            <li>Diagnostico inicial claro.</li>
+            <li>Plan tecnico segun criticidad y ubicacion.</li>
+            <li>Seguimiento del proyecto con un unico referente.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container coverage-grid">
+      {coverage.map((item) => (
+        <article class="metric">
+          <strong>{item}</strong>
+          <p>Respuesta segun el alcance tecnico, logistico y operativo del proyecto.</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container two-column">
+      <div class="section-heading tight">
+        <p class="eyebrow">Criterio comercial</p>
+        <h2>Mostrar alcance territorial tambien transmite seriedad.</h2>
+        <p>
+          Para una institucion o empresa, saber que pueden responder fuera de una sola ciudad
+          reduce incertidumbre y mejora la percepcion de respaldo. Eso incluye proyectos ejecutados
+          en otras provincias, como instalaciones realizadas en Formosa.
+        </p>
+      </div>
+      <div class="signal-panel">
+        <div class="signal-row">
+          <span>Base principal</span>
+          <strong>Cordoba</strong>
+        </div>
+        <div class="signal-row">
+          <span>Interior provincial</span>
+          <strong>Trabajos planificados y soporte coordinado</strong>
+        </div>
+        <div class="signal-row">
+          <span>Proyectos nacionales</span>
+          <strong>Segun necesidad tecnica, viabilidad operativa y alcance del proyecto</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container hero-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Consulta</p>
+        <h2>Si queres evaluar un proyecto fuera de tu plaza habitual, conversemos.</h2>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="/contacto">Consultar cobertura</a>
+        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

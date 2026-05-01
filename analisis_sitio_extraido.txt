@@ -1,0 +1,537 @@
+--- PAGE 1 ---
+https://www.reuter.com.ar/
+puedes ver este sitio web?
+Sí, lo pude ver sin problema 👍
+Tu sitio es: Abrir sitio web
+Qué estás mostrando hoy
+Es una web bastante simple y directa de REUTER IT NETWORKS, orientada a:
+Servicios de redes y soporte técnico
+Foco claro en ámbitos educativos
+Mensaje principal: inclusión tecnológica y educación conectada 
+Secciones básicas:
+Inicio
+Quiénes somos
+Servicios
+Contacto
+Un formulario de soporte / login
+Te digo lo importante (sin vueltas)
+La web funciona, pero está muy básica. Para alguien que no te conoce, hoy:
+No transmite todo lo que vos sabés hacer (y es muchísimo)
+No vende bien tus servicios
+No genera confianza fuerte (falta prueba social, trabajos, casos reales)
+Y esto es clave:
+👉  Vos no sos “uno más que instala redes”, tenés nivel de infraestructura, servidores,
+domótica, seguridad… y eso no se ve reflejado.
+Problemas claros que veo
+Te marco lo más importante:
+1. Diseño muy plano
+Parece plantilla vieja o sin terminar
+Reuter IT Netwo…
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 1/17
+
+--- PAGE 2 ---
+No hay impacto visual ni jerarquía
+2. Contenido muy corto
+No explica qué hacés exactamente
+No diferencia tu valor frente a otros
+3. Cero casos reales
+No mostrás instalaciones en escuelas
+No hay fotos, ni resultados, ni ejemplos
+4. Falta enfoque comercial
+No hay llamados claros a la acción tipo:
+“Solicitar presupuesto”
+“Evaluación gratuita”
+“Auditoría de red”
+Lo bueno (esto sí está bien)
+El enfoque en educación es muy inteligente (es tu nicho real)
+El mensaje es claro: tecnología aplicada a instituciones
+Tiene lo básico para empezar
+Mi recomendación (esto te va a hacer ganar plata)
+Si querés que esto deje de ser “una web” y pase a ser una herramienta que te genere
+clientes:
+Tenés que transformarla en algo así:
+1. Página de impacto
+Qué problema resolvés (ej: “Escuelas con internet lento o inseguro”)
+Qué solución ofrecés
+Por qué vos
+2. Servicios claros
+Redes WiFi institucionales
+Cámaras de seguridad
+Servidores / almacenamiento
+Domótica / automatización
+3. Casos reales
+“Escuela X: antes / después”
+Fotos reales tuyas (esto es oro)
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 2/17
+
+--- PAGE 3 ---
+4. Autoridad
+Mostrar que trabajás con:
+MikroTik
+Ubiquiti
+Docker / servidores
+Esto te posiciona fuerte
+5. Contacto directo
+Botón de WhatsApp visible
+Formulario simple
+Te digo algo importante
+Con el perfil que tenés vos, esta web hoy está muy por debajo de tu nivel.
+Y eso es peligroso porque:
+👉  el cliente juzga lo que ve, no lo que sabés
+Si querés, en el próximo paso hacemos algo mucho más potente:
+Te armo la estructura completa de la web (tipo landing que vende)
+O te digo exactamente qué modificar en tu sistema actual línea por línea
+Decime qué preferís:
+👉  “mejorar lo que tengo”
+👉  o “hacerla bien desde cero”
+Fuent es
+Fuent es
+Exactamente de eso quería hablarte. Quisiera mejorar este 
+sitio web o hacerlo de nuevo. No tengo problema en 
+hacerlo de nuevo. Quisiera saber qué me recomiendas, 
+cómo hacerlo, qué tecnología usar para hacerlo, si lo hago 
+en WordPress, si lo programamos de cero, si lo hacemos 
+con Laravel, no sé, lo que vos recomiendes. ¿Cuál sería la 
+mejor opción?
+Voy a darte una recomendación práctica, no “de programador enamorado de una
+tecnología”. La prioridad acá es que el sitio venda, sea fácil de mantener y no te robe
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 3/17
+
+--- PAGE 4 ---
+Pensado durante 6s
+semanas.
+Mi recomendación: hacela de nuevo en WordPress, no en Laravel.
+Para tu caso, WordPress es la mejor opción porque necesitás una web comercial, editable,
+rápida de publicar y fácil de actualizar. WordPress sigue siendo el CMS dominante:
+W3Techs lo mide en 42,2% de todos los sitios web y 59,6% de los sitios con CMS
+conocido. 
+Qué haría yo
+Opción recomendada: WordPress + tema liviano + Elementor o Gutenberg
+Ideal para:
+Mostrar servicios
+Agregar fotos de trabajos
+Publicar casos reales
+Posicionar en Google
+Editar textos sin tocar código
+Tener formulario, WhatsApp, SEO y mantenimiento simple
+No usaría un theme pesado viejo como KLEO. Usaría algo liviano tipo Astra /
+GeneratePress / Kadence, con PHP moderno. WordPress recomienda PHP 8.3 o superior,
+MariaDB 10.6+ o MySQL 8.0+, y HTTPS. 
+Qué NO haría
+No la haría en Laravel.
+Laravel es excelente, pero para una web institucional tuya sería sobredimensionado.
+Laravel conviene si vas a tener:
+Sistema de clientes
+Tickets
+Panel privado
+Facturación
+Automatizaciones complejas
+Integraciones internas
+Para una web que vende servicios, Laravel te haría perder tiempo en cosas que WordPress
+ya resuelve.
+Mi decisión concreta
+w3techs.com
+WordPress.org
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 4/17
+
+--- PAGE 5 ---
+Haría esto:
+Sitio principal en WordPress:
+reuter.com.ar
+Y dejaría Laravel u otros sistemas para herramientas internas o portales aparte, por
+ejemplo:
+clientes.reuter.com.ar
+soporte.reuter.com.ar
+panel.reuter.com.ar
+Estructura que te conviene
+1. Inicio
+“Redes, cámaras, servidores y soporte IT para instituciones educativas”
+Botón directo a WhatsApp
+2. Servicios
+Redes WiFi institucionales
+Cámaras de seguridad
+Servidores y backups
+Soporte técnico
+Domótica y automatización
+Seguridad informática básica
+3. Soluciones para escuelas
+Esta debería ser tu sección fuerte
+4. Trabajos realizados
+Fotos reales
+Antes / después
+Problema / solución
+5. Quién soy / quiénes somos
+Acá mostrás experiencia real, no chamuyo corporativo
+6. Contacto
+WhatsApp
+Formulario
+Zona de trabajo: Córdoba / instituciones educativas
+Veredicto
+Hacela nueva.
+No gastaría energía tratando de emparchar la actual.
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 5/17
+
+--- PAGE 6 ---
+La actual sirve como punto de partida, pero tu web nueva debería vender una idea mucho
+más fuerte:
+Ahí está tu valor.
+“Soy el técnico que una escuela llama cuando necesita que la red, las cámaras, los
+servidores y la seguridad funcionen de verdad.”
+Fuent es
+Fuent es
+ok vamos a hacerla entonces
+Pensado durante un par de segundos
+Perfecto. La haría como proyecto comercial serio: primero definimos mensaje y estructura,
+después diseño, después armado técnico y recién al final detalles finos como SEO,
+formularios y WhatsApp.
+Excelente. Vamos a hacerla nueva.
+Mi recomendación de trabajo:
+1. Sitio en WordPress
+Usamos WordPress limpio, con un tema liviano:
+Opción recomendada:
+Astra + Elementor
+o
+Kadence + editor nativo Gutenberg
+Para vos elegiría: Astra + Elementor, porque te va a resultar más fácil editar después.
+2. Estructura inicial del sitio
+La web tendría estas páginas:
+1. Inicio
+2. Servicios
+3. Soluciones para escuelas
+4. Trabajos realizados
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 6/17
+
+--- PAGE 7 ---
+5. Quiénes somos
+6. Contacto
+Y botones claros:
+Solicitar presupuesto
+Escribirme por WhatsApp
+Pedir diagnóstico de red
+3. Mensaje principal
+Yo pondría algo así:
+Subtítulo:
+4. Próximo paso
+Ahora necesitamos armar el contenido base.
+Te propongo empezar por la página de Inicio.
+La estructura sería:
+1. Título principal
+2. Explicación corta de qué hacés
+3. Servicios principales
+4. Por qué contratarte
+5. Casos/trabajos realizados
+6. Botón de contacto
+En el próximo mensaje puedo armarte directamente el texto completo de la página de
+Inicio listo para copiar en WordPress.
+Redes, cámaras, servidores y soporte IT para instituciones educativas y empresas en
+Córdoba.
+Diseñamos, instalamos y mantenemos infraestructura tecnológica confiable para que
+tu institución funcione sin cortes, sin improvisaciones y con soporte real.
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 7/17
+
+--- PAGE 8 ---
+Sí, te cuento que por lo menos yo hago varias cosas más. 
+Programación de sistemas, como ya sabes, uso mucho, te 
+he usado mucho a vos y he usado mucho Cursor, Visual 
+Studio Code, Codex, Claude, he utilizado mucho y puedo 
+desarrollar software y sistemas chicos y un poco complejos 
+también. Domótica, todo eso.
+Bien, esto cambia bastante el enfoque… y para mejor.
+El error sería mezclar todo sin orden y terminar con una web confusa tipo “hago de todo”.
+Eso espanta clientes.
+Tu ventaja real no es que hacés muchas cosas, sino que resolvés problemas completos.
+🔥  Enfoque correcto (esto es clave)
+No sos:
+Sos:
+Eso es lo que vamos a vender.
+  Cómo lo vamos a estructurar
+En vez de listar habilidades sueltas, agrupamos en soluciones claras:
+1. Infraestructura IT
+Redes WiFi
+Cableado
+Internet estable
+Servidores
+2. Seguridad
+Cámaras
+Control de accesos
+técnico + programador + domótica + redes
+Soluciones tecnológicas completas para instituciones
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 8/17
+
+--- PAGE 9 ---
+Monitoreo
+3. Software y sistemas
+Sistemas a medida
+Automatización de procesos
+Integraciones simples
+4. Domótica
+Automatización de luces
+Control remoto
+Optimización energética
+🎯  Mensaje principal (ajustado a tu perfil real)
+Esto ya es más potente:
+Subtítulo:
+👉  Esto es lo que te diferencia:
+vos resolvés todo, no una parte
+⚠  Algo importante que te voy a corregir
+Decir “uso ChatGPT, Cursor, etc.” en la web no suma valor.
+Al cliente no le importa cómo programás, le importa:
+que funcione
+que no falle
+que tenga soporte
+Eso lo dejamos afuera.
+💡  Posicionamiento fuerte (esto te conviene mucho)
+Te conviene enfocarte así:
+Soluciones tecnológicas completas: redes, seguridad, servidores, software y
+automatización para instituciones educativas y empresas.
+Desde la conexión a internet hasta los sistemas internos, nos encargamos de que todo
+funcione de forma estable, segura y sin depender de múltiples proveedores.
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 9/17
+
+--- PAGE 10 ---
+Porque ya trabajás ahí y:
+hay necesidad real
+hay presupuesto
+hay problemas constantes
+hay poca gente que lo haga bien
+🚀  Próximo paso
+Ahora sí, con esto claro, te armo la página de inicio completa lista para pegar en
+WordPress, con:
+Texto profesional
+Estructura que vende
+Llamados a la acción
+Pero antes quiero que me confirmes algo:
+👉  ¿Querés que el enfoque sea:
+1. Solo instituciones educativas
+2. Educativas + empresas (más general)
+No es un detalle menor.
+Define todo el mensaje.
+Especializado en instituciones educativas
+Exacto, soy un solucionador completo, tal cual. es lo que 
+vivo diciendo, porque un programador no necesariamente 
+sabe de diseño, un diseñador no necesariamente sabe de 
+programación y el programador no necesariamente sabe 
+de servidores, y así. El que hace redes no necesariamente 
+sabe de cámaras y el que hace redes no necesariamente 
+sabe de servidores. y el que sabe de servidores no 
+necesariamente tiene idea de redes. Así que, la verdad que 
+no sé cómo se llama la gente como yo, pero creo que es 
+un gran valor todo el conjunto de conocimiento que he 
+ido acumulando.Y donde considero que la principal 
+habilidad que tengo es la habilidad de aprender, porque 
+muchas veces nos pasa que nos piden revisar un 
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 10/17
+
+--- PAGE 11 ---
+dispositivo como o una central telefónica o un servidor y 
+no sabemos hacerlo o nunca lo hemos hecho, pero lo 
+estudiamos y lo sacamos andando. Nos ha pasado muchas 
+veces eso. Nos ponemos, somos, este, no obstinados, sino 
+somos perseverantes.
+Lo que describís tiene muchísimo valor… pero hay un punto donde te voy a ajustar el
+enfoque para que eso venda y no quede como un discurso técnico lindo.
+Porque si lo dejás así como lo explicaste:
+👉  suena a “sé de todo un poco”
+y eso en el mercado no posiciona fuerte
+  Cómo se llama realmente lo que sos
+No sos “alguien que sabe de todo”.
+Sos:
+Y eso tiene mucho más peso.
+⚠  Lo que NO vamos a decir (aunque sea verdad)
+Esto:
+“aprendo rápido”
+“investigo”
+“nunca lo hice pero lo saco andando”
+❌  NO va en la web
+Porque del lado del cliente se interpreta como:
+Aunque en realidad lo hagas bien.
+Integrador tecnológico
+o mejor aún (más vendible):
+Especialista en soluciones tecnológicas integrales
+“no sabe, pero prueba”
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 11/17
+
+--- PAGE 12 ---
+💡  Lo que SÍ vamos a decir (misma idea, mejor posicionada)
+Transformamos eso en algo que genere confianza:
+Y esto:
+¿Ves la diferencia?
+Es lo mismo que dijiste… pero ahora vende y transmite seguridad.
+🔥  Tu diferencial REAL (esto es oro)
+Esto sí lo tenés que explotar:
+Unificás todo en un solo proveedor
+Evitás que el cliente tenga 4 técnicos distintos
+Resolución completa, no parcial
+Te hacés cargo del problema entero
+Eso vale mucho más que “saber programar”.
+  Frase fuerte para tu web
+Te dejo una que podrías usar casi textual:
+🎯  Ahora bajamos esto a tierra
+Con todo lo que me dijiste, tu posicionamiento queda así:
+👉  No sos técnico
+👉  No sos programador
+👉  No sos instalador
+Sos:
+Abordamos cada proyecto de forma integral, resolviendo desde la infraestructura hasta
+los sistemas, incluso en escenarios donde intervienen múltiples tecnologías.
+Nos especializamos en diagnosticar problemas complejos y encontrar soluciones
+donde otros proveedores no llegan.
+Unificamos redes, servidores, seguridad, software y automatización en una única
+solución, evitando la dependencia de múltiples proveedores y garantizando que todo
+funcione como un sistema integrado.
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 12/17
+
+--- PAGE 13 ---
+🚀  Siguiente paso
+Ahora sí estamos listos para hacer algo serio.
+En el próximo mensaje te voy a armar:
+👉  La página de INICIO completa, lista para pegar en WordPress
+con título potente
+texto claro
+secciones ordenadas
+enfoque comercial real
+Y no genérico, sino basado en lo que vos realmente hacés.
+Antes de eso, confirmame esto (es importante):
+👉  ¿Querés posicionarte principalmente en:
+Córdoba capital
+o toda la provincia / país?
+Esto define cómo escribimos todo.
+El que resuelve cuando todo lo demás falla o no encaja
+hacer toda la provincia. Viajamos al interior, tenemos 
+clientes en Despeñaderos, en Carlos Paz, en las Acequias. 
+Hemos ido a hacer trabajos pedidos desde una empresa 
+de Buenos Aires a realizarlos en la provincia de Formosa. 
+Así que si se puede dar alcance nacional, tampoco hay 
+problema.
+Perfecto. Entonces vamos a posicionarte como:
+Eso es fuerte, real y creíble en tu caso.
+Proveedor de soluciones tecnológicas en toda la provincia de Córdoba, con alcance
+nacional
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 13/17
+
+--- PAGE 14 ---
+Ahora sí, te dejo la página de INICIO completa, lista para copiar en WordPress (Elementor
+o Gutenberg). Esto ya está pensado para vender, no solo para “estar en internet”.
+  PÁGINA DE INICIO (LISTA PARA USAR)
+🔵  BLOQUE 1 — HERO (lo primero que ven)
+Título:
+Soluciones tecnológicas integrales para instituciones y empresas
+Subtítulo:
+Redes, servidores, cámaras, software y automatización, todo en una sola solución.
+Trabajamos en toda la provincia de Córdoba con alcance nacional.
+Botones:
+Solicitar presupuesto
+Escribinos por WhatsApp
+🔵  BLOQUE 2 — PROBLEMA (empatía)
+Muchas instituciones y empresas trabajan con múltiples proveedores:
+uno para la red, otro para las cámaras, otro para los sistemas…
+Esto genera:
+Problemas que nadie se hace cargo
+Sistemas que no se integran
+Fallas constantes
+Pérdida de tiempo y dinero
+🔵  BLOQUE 3 — SOLUCIÓN (tu valor)
+Nosotros resolvemos todo como un sistema integrado.
+Unificamos:
+Redes y conectividad
+Servidores y almacenamiento
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 14/17
+
+--- PAGE 15 ---
+Cámaras y seguridad
+Software y automatización
+👉  Un solo responsable.
+👉  Una solución completa.
+👉  Todo funcionando en conjunto.
+🔵  BLOQUE 4 — SERVICIOS
+Infraestructura IT
+Diseño e implementación de redes, WiFi institucional, cableado estructurado y
+conectividad estable.
+Seguridad
+Instalación de cámaras, monitoreo y soluciones de control y protección.
+Servidores y almacenamiento
+Implementación de servidores locales, backups y gestión de datos.
+Software y sistemas
+Desarrollo de soluciones a medida y automatización de procesos.
+Domótica y automatización
+Control inteligente de iluminación, dispositivos y sistemas.
+🔵  BLOQUE 5 — DIFERENCIAL
+¿Por qué trabajar con nosotros?
+Enfoque integral: resolvemos el problema completo
+Experiencia en múltiples tecnologías
+Capacidad de diagnóstico en situaciones complejas
+Implementaciones reales en instituciones
+Acompañamiento y soporte
+🔵  BLOQUE 6 — TRABAJOS REALIZADOS
+Hemos trabajado en:
+Instituciones educativas
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 15/17
+
+--- PAGE 16 ---
+Empresas
+Proyectos en distintas localidades de Córdoba
+Implementaciones solicitadas desde otras provincias
+(Zona para que después agregues fotos reales — esto es clave)
+🔵  BLOQUE 7 — ALCANCE
+Trabajamos en toda la provincia de Córdoba:
+Córdoba Capital, Villa Carlos Paz, Despeñaderos, Las Acequias y localidades del interior.
+También realizamos trabajos a nivel nacional según el proyecto.
+🔵  BLOQUE 8 — CONTACTO
+¿Necesitás resolver un problema tecnológico?
+Podemos ayudarte.
+Diagnóstico inicial
+Evaluación de tu infraestructura
+Propuesta de solución
+Botones:
+Contactar por WhatsApp
+Solicitar presupuesto
+  Ahora lo importante (esto es estrategia)
+Esto que te armé ya está:
+✔  Posicionado
+✔  Claro
+✔  Profesional
+✔  Vendible
+Pero hay algo que va a marcar la diferencia REAL:
+👉  Fotos de trabajos tuyos
+Sin eso, la web queda “correcta”
+Con eso, pasa a ser convincente
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 16/17
+
+--- PAGE 17 ---
+🚀  Próximo paso
+Ahora tenemos dos caminos:
+Opción A (rápida)
+Te guío paso a paso:
+instalar WordPress
+tema Astra
+Elementor
+armar esta página
+Opción B (más pro)
+Te armo:
+estructura completa del sitio
+diseño sugerido (secciones visuales)
+qué plugins usar
+cómo dejarlo listo para producción
+Decime:
+👉  “vamos paso a paso”
+o
+👉  “armemos todo el sistema completo”
+Y lo llevamos a algo serio de verdad.
+1/5/26, 10:10 a.m. Análisis de sitio web
+https://chatgpt.com/c/69f28eb3-a878-83e9-a3ff-7630defc65bc 17/17

@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../data/site";
+---
+
+<BaseLayout
+  title="Nosotros | REUTER IT NETWORKS"
+  description="Perfil profesional y enfoque integral de REUTER IT NETWORKS."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Nosotros</p>
+        <h1>No vendemos tareas sueltas. Entramos para ordenar el sistema completo.</h1>
+        <p class="lead">
+          Entendemos la relacion entre conectividad, servidores, seguridad, software y automatizacion,
+          y nos hacemos cargo de que todo funcione con el mismo criterio tecnico.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-stack">
+          <span class="panel-chip">Como trabajamos</span>
+          <ul class="hero-list">
+            <li>Diagnostico claro.</li>
+            <li>Implementacion con criterio.</li>
+            <li>Seguimiento real en sitio.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container team-photos">
+      <figure class="photo-card">
+        <img
+          src="/images/trabajos/reuter-trabajo-institucional.jpg"
+          alt="Trabajo tecnico en una institucion con varias notebooks en proceso de revision."
+          loading="lazy"
+        />
+        <figcaption>
+          <strong>Trabajo real en instituciones</strong>
+          <span>Revision, preparacion y puesta a punto de equipamiento en contexto educativo.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="photo-card">
+        <img
+          src="/images/trabajos/reuter-en-sitio.jpg"
+          class="photo-focus-top"
+          alt="Presencia tecnica en sitio con herramientas de trabajo."
+          loading="lazy"
+        />
+        <figcaption>
+          <strong>Presencia en campo</strong>
+          <span>Diagnostico, implementacion y seguimiento directo donde el trabajo realmente ocurre.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container hero-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Detras de escena</p>
+        <h2>"Si en las fotos parezco el que menos trabaja, es solo porque soy el que se acuerda de sacar la foto."</h2>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="/contacto">Hablar del proyecto</a>
+        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

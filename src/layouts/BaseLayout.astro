@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+import { company, navigation } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/images/favicon-reuter.png" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="/">
+            <img class="brand-logo" src="/images/logo-reuter-it.png" alt="REUTER IT NETWORKS" />
+          </a>
+
+          <nav class="nav">
+            {navigation.map((item) => (
+              <a class:list={["nav-link", pathname === item.href && "is-active"]} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <a class="button button-primary header-cta" href={company.whatsappHref} target="_blank" rel="noreferrer">
+            WhatsApp
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <p class="eyebrow">REUTER IT NETWORKS</p>
+            <h2>Infraestructura, seguridad y soporte con una sola estrategia.</h2>
+            <p class="footer-copy">
+              Trabajamos para que la confianza empiece antes del primer contacto.
+              Este sitio esta pensado para mostrar con claridad, autoridad y evidencia real como resolvemos cada proyecto.
+            </p>
+          </div>
+
+          <div class="footer-card">
+            <p class="eyebrow">Contacto</p>
+            <ul class="footer-list">
+              <li><a href={company.whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a></li>
+              <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
+              <li><a href={`tel:${company.phone}`}>{company.phone}</a></li>
+              <li>{company.location}</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

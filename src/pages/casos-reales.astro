@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { cases, company } from "../data/site";
+---
+
+<BaseLayout
+  title="Casos reales | REUTER IT NETWORKS"
+  description="Casos y proyectos que muestran el enfoque integral de REUTER IT NETWORKS."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Casos reales</p>
+        <h1>La mejor forma de demostrar criterio tecnico es mostrar como se resolvieron problemas concretos.</h1>
+        <p class="lead">
+          Estos proyectos muestran instalaciones, soporte y puestas en marcha reales en
+          instituciones donde hacia falta resolver bien, documentar y dejar todo funcionando.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-stack">
+          <span class="panel-chip">Lo que se ve en cada caso</span>
+          <ul class="hero-list">
+            <li>Problema concreto en contexto institucional.</li>
+            <li>Instalacion, configuracion o soporte ejecutado en sitio.</li>
+            <li>Resultado final con criterio tecnico y foco operativo.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container case-grid">
+      {cases.map((item) => (
+        <article class="card case-card">
+          {item.image ? (
+            <div class="case-media">
+              <img class="case-image" src={item.image} alt={item.imageAlt} loading="lazy" />
+              {item.hoverImage && (
+                <>
+                  <img
+                    class="case-image case-image-hover"
+                    src={item.hoverImage}
+                    alt={item.hoverImageAlt ?? item.imageAlt}
+                    loading="lazy"
+                  />
+                  <span class="case-swap-chip">Ver otra vista</span>
+                </>
+              )}
+            </div>
+          ) : (
+            <div class="case-placeholder">
+              <small>Proyecto destacado</small>
+              <strong>{item.location}</strong>
+            </div>
+          )}
+          {item.video && (
+            <div class="case-video-wrap">
+              <div class="case-proof">
+                <span>Prueba real en sitio</span>
+                <strong>Video de funcionamiento</strong>
+              </div>
+              <video
+                class="case-video"
+                controls
+                preload="metadata"
+                playsinline
+                poster={item.videoPoster ?? item.image}
+              >
+                <source src={item.video} type="video/mp4" />
+                Tu navegador no soporta video HTML5.
+              </video>
+            </div>
+          )}
+          <div class="case-body">
+            <p class="eyebrow">{item.location}</p>
+            <h3>{item.title}</h3>
+            <p><strong>Problema:</strong> {item.challenge}</p>
+            <p><strong>Solucion:</strong> {item.solution}</p>
+            <p><strong>Resultado:</strong> {item.outcome}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container hero-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Siguiente paso</p>
+        <h2>Con mas fotos, videos y antes/despues, esta pagina puede convertirse en una pieza comercial muy fuerte.</h2>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="/contacto">Empezar proyecto</a>
+        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
+          Coordinar una charla
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

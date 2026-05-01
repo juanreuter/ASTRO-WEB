@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { cases, company, partnerBrands, services } from "../data/site";
+
+const featuredServices = services.slice(0, 4);
+const featuredCases = cases.filter((item) =>
+  [
+    "Instalacion de pizarras tactiles y canones proyectores",
+    "Segmentacion de red y tecnologia operativa para un bar",
+    "Armado de rack y distribucion para red escolar"
+  ].includes(item.title)
+);
+---
+
+<BaseLayout
+  title="REUTER IT NETWORKS | Soluciones tecnologicas integrales"
+  description="Redes, servidores, seguridad, software y automatizacion para instituciones en Cordoba."
+>
+  <section class="hero hero-signature">
+    <div class="container hero-grid hero-grid-signature">
+      <div class="hero-copy">
+        <p class="eyebrow">Infraestructura que respalda la operacion diaria</p>
+        <h1>
+          Cuando la tecnologia se vuelve un parche,
+          <span class="gradient-word">nosotros la ordenamos.</span>
+        </h1>
+        <p class="lead">{company.subtitle}</p>
+
+        <div class="actions">
+          <a class="button button-primary" href="/contacto">Solicitar presupuesto</a>
+          <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
+            Hablar por WhatsApp
+          </a>
+        </div>
+
+        <div class="brand-cloud compact-cloud">
+          {partnerBrands.map((brand) => <span class="brand-pill">{brand}</span>)}
+        </div>
+      </div>
+
+      <aside class="hero-showcase">
+        <div class="showcase-main">
+          <img src="/images/trabajos/rack-testeo-equipo.jpg" alt="Testeo tecnico de rack y equipamiento en una institucion." />
+          <div class="showcase-caption">
+            <small>Trabajo real en sitio</small>
+            <strong>Testeo, revision y puesta a punto del equipamiento antes de darlo por resuelto.</strong>
+          </div>
+        </div>
+
+        <article class="showcase-card card-a">
+          <img src="/images/trabajos/formosa-pizarra-tactil.jpg" alt="Pizarra tactil instalada en Formosa." />
+          <div>
+            <small>Formosa</small>
+            <strong>Instalacion y puesta en marcha de tecnologia delicada.</strong>
+          </div>
+        </article>
+
+        <article class="showcase-card card-b">
+          <img src="/images/trabajos/bar-redes-y-pantalla.jpg" alt="Pantalla LED y tecnologia operativa en un bar." />
+          <div>
+            <small>Guemes, Cordoba</small>
+            <strong>Red segmentada y operacion del negocio resuelta con criterio.</strong>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Que hacemos</p>
+        <h2>Redes, seguridad, servidores y soporte con una sola estrategia tecnica.</h2>
+        <p>
+          No trabajamos por partes sueltas. Entramos para ordenar la base tecnica y dejar una
+          infraestructura mas estable, mantenible y clara.
+        </p>
+      </div>
+
+      <div class="grid service-grid">
+        {featuredServices.map((service, index) => (
+          <article class="card service-card">
+            <span class="service-index">{String(index + 1).padStart(2, "0")}</span>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Casos reales</p>
+        <h2>La confianza se termina de construir cuando el trabajo se puede mostrar.</h2>
+        <p>
+          Algunos proyectos muestran mejor que cualquier promesa el tipo de criterio con el que trabajamos.
+        </p>
+      </div>
+
+      <div class="case-grid">
+        {featuredCases.map((item) => (
+          <article class="card case-card">
+            {item.image ? (
+              <div class="case-media">
+                <img class="case-image" src={item.image} alt={item.imageAlt} loading="lazy" />
+                {item.hoverImage && (
+                  <>
+                    <img
+                      class="case-image case-image-hover"
+                      src={item.hoverImage}
+                      alt={item.hoverImageAlt ?? item.imageAlt}
+                      loading="lazy"
+                    />
+                    <span class="case-swap-chip">Ver otra vista</span>
+                  </>
+                )}
+              </div>
+            ) : null}
+            <div class="case-body">
+              <p class="eyebrow">{item.location}</p>
+              <h3>{item.title}</h3>
+              <p>{item.outcome}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="actions">
+        <a class="button button-secondary" href="/casos-reales">Ver todos los casos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container hero-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Contacto directo</p>
+        <h2>Si hoy dependes de demasiados parches, conversemos antes de que el problema crezca.</h2>
+      </div>
+
+      <div class="actions">
+        <a class="button button-primary" href="/contacto">Pedir diagnostico</a>
+        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
+          Hablar ahora por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

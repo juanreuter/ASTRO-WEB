@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contacto | REUTER IT NETWORKS</title><meta name="description" content="Solicitar presupuesto o coordinar una evaluacion con REUTER IT NETWORKS."><link rel="icon" type="image/png" href="/images/favicon-reuter.png"><link rel="stylesheet" href="/_astro/BaseLayout.DHDkKhIv.css"></head> <body> <div class="site-shell"> <header class="site-header"> <div class="container header-inner"> <a class="brand" href="/"> <img class="brand-logo" src="/images/logo-reuter-it.png" alt="REUTER IT NETWORKS"> </a> <nav class="nav"> <a class="nav-link" href="/"> Inicio </a><a class="nav-link" href="/instituciones"> Instituciones </a><a class="nav-link" href="/casos-reales"> Casos reales </a><a class="nav-link" href="/nosotros"> Nosotros </a><a class="nav-link" href="/contacto"> Contacto </a> </nav> <a class="button button-primary header-cta" href="https://wa.me/5493512803872" target="_blank" rel="noreferrer">
+WhatsApp
+</a> </div> </header> <main>  <section class="hero"> <div class="container hero-grid"> <div class="hero-copy"> <p class="eyebrow">Contacto</p> <h1>Contanos que necesitas resolver y seguimos por WhatsApp.</h1> <p class="lead">
+La idea es simple: entender rapido el problema y avanzar con una conversacion clara.
+</p> </div> <aside class="hero-panel"> <div class="panel-stack"> <span class="panel-chip">Canales directos</span> <ul class="hero-list"> <li><a href="https://wa.me/5493512803872" target="_blank" rel="noreferrer">WhatsApp</a></li> <li><a href="mailto:contacto@reuter.com.ar">contacto@reuter.com.ar</a></li> <li><a href="tel:+54 9 351-2803-872">+54 9 351-2803-872</a></li> </ul> </div> </aside> </div> </section> <section class="page-section"> <div class="container contact-grid"> <article class="contact-card"> <p class="eyebrow">Formulario rapido</p> <h2>Este primer contacto sale directo por WhatsApp.</h2> <form class="contact-form" id="contact-form"> <div class="field"> <label for="name">Nombre</label> <input id="name" name="name" type="text" placeholder="Tu nombre" required> </div> <div class="field"> <label for="organization">Institucion o empresa</label> <input id="organization" name="organization" type="text" placeholder="Nombre de la institucion"> </div> <div class="field"> <label for="locality">Localidad</label> <input id="locality" name="locality" type="text" placeholder="Ciudad o localidad"> </div> <div class="field"> <label for="need">Necesidad principal</label> <textarea id="need" name="need" placeholder="Contanos brevemente el problema" required></textarea> </div> <button class="button button-primary" type="submit">Enviar por WhatsApp</button> <p class="status" id="form-status" aria-live="polite"></p> </form> </article> <aside class="contact-card"> <p class="eyebrow">Base operativa</p> <h2>Cordoba, con capacidad de movernos segun el proyecto.</h2> <ul class="check-list"> <li>WhatsApp como canal principal.</li> <li>Email para seguimiento y documentacion.</li> <li>Desplazamiento coordinado segun necesidad tecnica.</li> </ul> </aside> </div> </section> <script>(function(){const whatsappUrl = "https://wa.me/5493512803872";
+
+    const form = document.querySelector("#contact-form");
+    const status = document.querySelector("#form-status");
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const name = String(formData.get("name") || "").trim();
+      const organization = String(formData.get("organization") || "").trim();
+      const locality = String(formData.get("locality") || "").trim();
+      const need = String(formData.get("need") || "").trim();
+
+      if (!name || !need) {
+        if (status) {
+          status.textContent = "Completá al menos tu nombre y la necesidad principal.";
+        }
+        return;
+      }
+
+      const lines = [
+        "Hola, quiero consultar por un proyecto.",
+        `Nombre: ${name}`,
+        organization ? `Institucion o empresa: ${organization}` : "",
+        locality ? `Localidad: ${locality}` : "",
+        `Necesidad: ${need}`
+      ].filter(Boolean);
+
+      const href = `${whatsappUrl}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(href, "_blank", "noopener,noreferrer");
+
+      if (status) {
+        status.textContent = "Abrimos WhatsApp con tu mensaje listo para enviar.";
+      }
+    });
+  })();</script>  </main> <footer class="site-footer"> <div class="container footer-grid"> <div> <p class="eyebrow">REUTER IT NETWORKS</p> <h2>Infraestructura, seguridad y soporte con una sola estrategia.</h2> <p class="footer-copy">
+Trabajamos para que la confianza empiece antes del primer contacto.
+              Este sitio esta pensado para mostrar con claridad, autoridad y evidencia real como resolvemos cada proyecto.
+</p> </div> <div class="footer-card"> <p class="eyebrow">Contacto</p> <ul class="footer-list"> <li><a href="https://wa.me/5493512803872" target="_blank" rel="noreferrer">WhatsApp</a></li> <li><a href="mailto:contacto@reuter.com.ar">contacto@reuter.com.ar</a></li> <li><a href="tel:+54 9 351-2803-872">+54 9 351-2803-872</a></li> <li>Cordoba Capital, Villa Carlos Paz, Despenaderos, Las Acequias y localidades del interior.</li> </ul> </div> </div> </footer> </div> </body></html>

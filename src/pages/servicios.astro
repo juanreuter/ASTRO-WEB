@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company, services } from "../data/site";
+---
+
+<BaseLayout
+  title="Servicios | REUTER IT NETWORKS"
+  description="Redes, seguridad, servidores, software y automatizacion con enfoque integral."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Servicios</p>
+        <h1>Una oferta pensada para resolver el sistema completo, no tareas sueltas.</h1>
+        <p class="lead">
+          Cada servicio esta pensado para integrarse con el resto. Esa coherencia es la que
+          evita fallas repetidas, dependencias innecesarias y decisiones aisladas.
+        </p>
+      </div>
+
+      <aside class="hero-panel">
+        <div class="panel-stack">
+          <span class="panel-chip">Modelo de trabajo</span>
+          <ul class="hero-list">
+            <li>Diagnostico tecnico y operativo.</li>
+            <li>Propuesta concreta de implementacion.</li>
+            <li>Despliegue, seguimiento y soporte.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="grid">
+        {services.map((service) => (
+          <article class="card">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container hero-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Contacto</p>
+        <h2>Podemos ayudarte a ordenar la infraestructura antes de que el problema escale.</h2>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="/contacto">Solicitar presupuesto</a>
+        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

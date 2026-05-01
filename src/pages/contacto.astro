@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../data/site";
+---
+
+<BaseLayout
+  title="Contacto | REUTER IT NETWORKS"
+  description="Solicitar presupuesto o coordinar una evaluacion con REUTER IT NETWORKS."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Contacto</p>
+        <h1>Contanos que necesitas resolver y seguimos por WhatsApp.</h1>
+        <p class="lead">
+          La idea es simple: entender rapido el problema y avanzar con una conversacion clara.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-stack">
+          <span class="panel-chip">Canales directos</span>
+          <ul class="hero-list">
+            <li><a href={company.whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
+            <li><a href={`tel:${company.phone}`}>{company.phone}</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container contact-grid">
+      <article class="contact-card">
+        <p class="eyebrow">Formulario rapido</p>
+        <h2>Este primer contacto sale directo por WhatsApp.</h2>
+
+        <form class="contact-form" id="contact-form">
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+          </div>
+
+          <div class="field">
+            <label for="organization">Institucion o empresa</label>
+            <input id="organization" name="organization" type="text" placeholder="Nombre de la institucion" />
+          </div>
+
+          <div class="field">
+            <label for="locality">Localidad</label>
+            <input id="locality" name="locality" type="text" placeholder="Ciudad o localidad" />
+          </div>
+
+          <div class="field">
+            <label for="need">Necesidad principal</label>
+            <textarea
+              id="need"
+              name="need"
+              placeholder="Contanos brevemente el problema"
+              required
+            ></textarea>
+          </div>
+
+          <button class="button button-primary" type="submit">Enviar por WhatsApp</button>
+          <p class="status" id="form-status" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <aside class="contact-card">
+        <p class="eyebrow">Base operativa</p>
+        <h2>Cordoba, con capacidad de movernos segun el proyecto.</h2>
+        <ul class="check-list">
+          <li>WhatsApp como canal principal.</li>
+          <li>Email para seguimiento y documentacion.</li>
+          <li>Desplazamiento coordinado segun necesidad tecnica.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <script define:vars={{ whatsappUrl: company.whatsappHref }}>
+    const form = document.querySelector("#contact-form");
+    const status = document.querySelector("#form-status");
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const name = String(formData.get("name") || "").trim();
+      const organization = String(formData.get("organization") || "").trim();
+      const locality = String(formData.get("locality") || "").trim();
+      const need = String(formData.get("need") || "").trim();
+
+      if (!name || !need) {
+        if (status) {
+          status.textContent = "Completá al menos tu nombre y la necesidad principal.";
+        }
+        return;
+      }
+
+      const lines = [
+        "Hola, quiero consultar por un proyecto.",
+        `Nombre: ${name}`,
+        organization ? `Institucion o empresa: ${organization}` : "",
+        locality ? `Localidad: ${locality}` : "",
+        `Necesidad: ${need}`
+      ].filter(Boolean);
+
+      const href = `${whatsappUrl}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(href, "_blank", "noopener,noreferrer");
+
+      if (status) {
+        status.textContent = "Abrimos WhatsApp con tu mensaje listo para enviar.";
+      }
+    });
+  </script>
+</BaseLayout>
