@@ -1,34 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const projects = [
+// Proyectos con formato "uniforme" (imagen + copy + tags), agrupados por categoría.
+// ComuCon e Infraestructura Self-Hosted tienen contenido propio (diagrama de flujo /
+// pasos de recuperación) y se escriben aparte, más abajo en el markup.
+const platformProjects = [
   {
-    kicker: "Plataforma educativa (LMS)",
+    id: "miaulanube",
+    kicker: "Plataforma educativa (LMS) — multitenant",
     title: "MiAulaNube",
     description:
-      "Un aula virtual completa construida desde cero: cursos con unidades y temas, evaluaciones con corrección automática, tareas con entrega y calificación, foros, mensajería interna, notificaciones (push y email) y grabación de clases con pizarra digital. Hoy está en producción, con un demo público que cualquiera puede probar.",
+      "Un aula virtual completa construida desde cero: multiinstitución (cada colegio opera de forma independiente dentro de la misma arquitectura), cursos con unidades y temas, evaluaciones con corrección automática, tareas con entrega y calificación, foros, mensajería interna, notificaciones (push y email) y grabación de clases con pizarra digital. Diseñada desde la experiencia concreta trabajando con instituciones educativas. Hoy está en producción, con un demo público que cualquiera puede probar.",
     link: { href: "https://miaulanube.com", label: "Ver miaulanube.com ↗" },
-    tags: ["Next.js", "PostgreSQL", "Prisma", "Docker"],
+    tags: ["Next.js", "PostgreSQL", "Prisma", "Docker", "Multitenant"],
     media: { type: "single" as const, src: "/images/desarrollo/mian-hero.png", alt: "Landing de MiAulaNube" }
-  },
+  }
+];
+
+const toolProjects = [
   {
-    kicker: "Sistema de gestión interna",
-    title: "Facturación IT Network",
-    description:
-      "Sistema propio para administrar clientes, cargar tareas realizadas y generar facturas mensuales, con reparto automático de ingresos entre socios y sincronización en tiempo real contra una base SQL propia. Reemplazó planillas sueltas por un único lugar de trabajo.",
-    tags: ["JavaScript", "SQL", "Backend propio"],
-    media: { type: "single" as const, src: "/images/desarrollo/facturacion-stats.png", alt: "Panel del sistema de facturación" },
-    reverse: true
-  },
-  {
+    id: "nettopo",
     kicker: "Descubrimiento y planimetría de redes",
-    title: "NetTopoDiscovery + NetPlanner",
+    title: "NetTopo Discovery + NetPlanner",
+    lead: "Pasar de una red que nadie conoce completamente a una infraestructura relevada, visible y documentada.",
     descriptionPre:
       "Un motor de descubrimiento automático que releva la topología real de una red — vecinos por LLDP/CDP/MNDP, tablas MAC, ARP y datos directos de routers MikroTik vía RouterOS — y lo vuelca en ",
     descriptionStrong: "NetPlanner",
     descriptionPost:
-      ", una herramienta propia de planimetría visual donde cada equipo, puerto y conexión queda documentado y navegable. Pensado para poder salir a relevar una red a campo con una notebook o una Raspberry Pi.",
-    tags: ["Python", "SNMP / LLDP", "Node.js", "Raspberry Pi"],
+      ", una herramienta propia de planimetría visual donde cada equipo, puerto y conexión queda documentado y navegable. Pensado para poder salir a relevar una red a campo con una notebook o una Raspberry Pi, y para agilizar el troubleshooting el día que algo falla.",
+    tags: ["Python", "SNMP / LLDP / CDP / MNDP", "ARP / tablas MAC", "RouterOS", "Node.js", "Raspberry Pi"],
     media: {
       type: "two-up" as const,
       items: [
@@ -36,8 +36,21 @@ const projects = [
         { src: "/images/desarrollo/netplanner-topo.png", alt: "Mapa de topología en NetPlanner" }
       ]
     }
+  }
+];
+
+const internalProjects = [
+  {
+    id: "facturacion",
+    kicker: "Sistema de gestión interna",
+    title: "Facturación IT Network",
+    description:
+      "Sistema propio para administrar clientes, cargar tareas realizadas y generar facturas mensuales, con reparto automático de ingresos entre socios y sincronización en tiempo real contra una base SQL propia. Reemplazó planillas sueltas por un único lugar de trabajo.",
+    tags: ["JavaScript", "SQL", "Backend propio"],
+    media: { type: "single" as const, src: "/images/desarrollo/facturacion-stats.png", alt: "Panel del sistema de facturación" }
   },
   {
+    id: "cefyt",
     kicker: "Gestión académica",
     title: "CEFyT — Instituto Superior",
     description:
@@ -50,14 +63,14 @@ const projects = [
 ---
 
 <BaseLayout
-  title="Desarrollo & DevOps | REUTER IT NETWORKS"
-  description="Software a medida y la infraestructura real detrás: plataformas web, sistemas de gestión, descubrimiento de redes y despliegue en producción."
+  title="Software y Plataformas | REUTER IT NETWORKS"
+  description="Plataformas propias, herramientas de red, sistemas de gestión a medida e infraestructura self-hosted: el software real detrás de la infraestructura que implementamos."
   ogImage="/images/desarrollo/mian-hero.png"
   bodyClass="dev-scope"
 >
   <style is:global>
     /* ============================================================
-       Sección "Desarrollo & DevOps" — paleta propia (MiAulaNube)
+       Sección "Software y Plataformas" — paleta propia (MiAulaNube)
        Se mantiene el shell/tipografía del sitio; el acento cambia
        de teal a azul/naranja solo dentro de .dev-scope.
        ============================================================ */
@@ -105,7 +118,7 @@ const projects = [
     @media (max-width: 560px) { .dev-capabilities { grid-template-columns: 1fr; } }
 
     /* ---- project rows ---- */
-    .dev-projects { display: flex; flex-direction: column; gap: clamp(3.5rem, 6vw, 6rem); }
+    .dev-projects { display: flex; flex-direction: column; gap: clamp(3rem, 5vw, 5rem); }
     .dev-project { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
     .dev-project.rev .dev-project-media { order: 2; }
     .dev-project.rev .dev-project-copy { order: 1; }
@@ -121,6 +134,7 @@ const projects = [
     .dev-project-kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 0.75rem; display: block; }
     .dev-project-copy h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.5rem, 2.2vw, 2rem); margin-bottom: 0.9rem; letter-spacing: -0.01em; }
     .dev-project-copy p { margin-bottom: 1.1rem; }
+    .dev-project-lead { color: var(--text); font-style: italic; font-family: var(--font-serif); font-size: 1.05rem !important; }
     .dev-project-copy .tag-row { margin-top: 1.25rem; }
     .dev-project-copy .tag:hover { color: var(--accent); border-color: var(--accent); }
     .dev-project-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); border-bottom: 1px solid transparent; }
@@ -145,7 +159,7 @@ const projects = [
     </div>
     <div class="container">
       <div class="editorial-copy reveal" style="max-width:44rem;">
-        <p class="eyebrow">Desarrollo &amp; DevOps</p>
+        <p class="eyebrow">Software y Plataformas</p>
         <h1>Software a medida, con la <span class="gradient-word">infraestructura real</span> detrás</h1>
         <p class="lead">
           No solo instalamos redes: diseñamos, programamos y desplegamos los sistemas que corren sobre ellas
@@ -194,36 +208,182 @@ const projects = [
     <div class="container">
       <div class="section-heading editorial-heading reveal">
         <p class="eyebrow">Proyectos</p>
-        <h2>Cuatro sistemas, cuatro problemas distintos</h2>
+        <h2>Plataformas propias, herramientas técnicas e infraestructura</h2>
       </div>
 
       <div class="dev-projects">
-        {projects.map((project) => (
-          <article class:list={["dev-project", "reveal", project.reverse && "rev"]}>
-            <div class:list={["dev-project-media", project.media.type === "two-up" && "two-up"]}>
-              {project.media.type === "single" ? (
-                <img src={project.media.src} alt={project.media.alt} />
-              ) : (
-                project.media.items.map((item) => <img src={item.src} alt={item.alt} />)
-              )}
+
+        <div class="dev-category-heading reveal">
+          <span>01</span>
+          <h3>Plataformas</h3>
+        </div>
+
+        {platformProjects.map((project) => (
+          <article class="dev-project reveal" id={project.id}>
+            <div class="dev-project-media">
+              <img src={project.media.src} alt={project.media.alt} />
             </div>
             <div class="dev-project-copy">
               <span class="dev-project-kicker">{project.kicker}</span>
               <h3>{project.title}</h3>
-              {project.description ? (
-                <p>{project.description}</p>
-              ) : (
-                <p>{project.descriptionPre}<strong>{project.descriptionStrong}</strong>{project.descriptionPost}</p>
-              )}
-              {project.link && (
-                <a class="dev-project-link" href={project.link.href} target="_blank" rel="noreferrer">{project.link.label}</a>
-              )}
+              <p>{project.description}</p>
+              <a class="dev-project-link" href={project.link.href} target="_blank" rel="noreferrer">{project.link.label}</a>
               <div class="tag-row">
                 {project.tags.map((tag) => <span class="tag">{tag}</span>)}
               </div>
             </div>
           </article>
         ))}
+
+        <!-- ComuCon: contenido propio (diagrama de flujo, no encaja en la plantilla genérica) -->
+        <article class="dev-project rev reveal" id="comucon">
+          <div class="dev-project-media" style="padding: 2.5rem; display:flex; align-items:center; justify-content:center; background:#0a0f16;">
+            <img src="/images/desarrollo/comucon-logo.png" alt="Logo de ComuCon" style="max-width: 220px;" />
+          </div>
+          <div class="dev-project-copy">
+            <span class="dev-project-kicker">Comunicación institucional — Comunidad Conectada</span>
+            <h3>ComuCon</h3>
+            <p>
+              Sistema de comunicación institucional jerárquica y en tiempo real, orientado principalmente a
+              instituciones educativas. Reemplaza procesos tradicionales como el cuaderno físico de comunicados
+              por una comunicación digital directa, trazable y organizada entre la institución y las familias.
+            </p>
+            <div class="flow-diagram" role="img" aria-label="Flujo: Institución envía Comunicación o Autorización a la Familia, que responde en tiempo real y queda registrado en la Institución.">
+              <div class="flow-step">
+                <span class="flow-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h16"></path><path d="M8 5.5h8"></path><path d="M8 13.5h8"></path><path d="M6.5 17.5h11"></path><path d="M5.5 4h13a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 18.5 16h-13A1.5 1.5 0 0 1 4 14.5v-9A1.5 1.5 0 0 1 5.5 4Z"></path></svg>
+                </span>
+                <span>Institución</span>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="flow-step">
+                <span class="flow-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6.5 4.5 10 8 13.5"></path><path d="M16 6.5 19.5 10 16 13.5"></path></svg>
+                </span>
+                <span>Comunicación / Autorización</span>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="flow-step">
+                <span class="flow-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 19.5c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"></path></svg>
+                </span>
+                <span>Familia</span>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="flow-step">
+                <span class="flow-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 11.8 11.3 13.5 14.7 10.1"></path><path d="M12 3.5 18.5 6v5.2c0 4.1-2.6 7.8-6.5 9.3-3.9-1.5-6.5-5.2-6.5-9.3V6L12 3.5Z"></path></svg>
+                </span>
+                <span>Respuesta registrada</span>
+              </div>
+            </div>
+            <p style="margin-top: 1.25rem;"><strong>Comunicaciones:</strong> mensajes informativos que no requieren acción del receptor; la institución puede saber si el mensaje fue visto.</p>
+            <p><strong>Autorizaciones:</strong> mensajes que requieren una decisión del padre o tutor (autorizar / no autorizar). La respuesta llega en tiempo real a la institución y queda registrada.</p>
+            <div class="comucon-modes">
+              <span class="tag">App Android</span>
+              <span class="tag">PWA</span>
+              <span class="tag">Instalable en PC</span>
+              <span class="tag">Instalable en iPhone/iOS (PWA)</span>
+            </div>
+            <p class="comucon-legal-note">
+              El sistema deja registro de la autorización y constancia de la respuesta, con trazabilidad del
+              consentimiento. No afirmamos validez legal de esa respuesta sin una revisión jurídica específica.
+            </p>
+          </div>
+        </article>
+
+        <div class="dev-category-heading reveal">
+          <span>02</span>
+          <h3>Herramientas técnicas</h3>
+        </div>
+
+        {toolProjects.map((project) => (
+          <article class="dev-project reveal" id={project.id}>
+            <div class="dev-project-media two-up">
+              {project.media.items.map((item) => <img src={item.src} alt={item.alt} />)}
+            </div>
+            <div class="dev-project-copy">
+              <span class="dev-project-kicker">{project.kicker}</span>
+              <h3>{project.title}</h3>
+              <p class="dev-project-lead">{project.lead}</p>
+              <p>{project.descriptionPre}<strong>{project.descriptionStrong}</strong>{project.descriptionPost}</p>
+              <div class="tag-row">
+                {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+              </div>
+            </div>
+          </article>
+        ))}
+
+        <div class="dev-category-heading reveal">
+          <span>03</span>
+          <h3>Sistemas internos y a medida</h3>
+        </div>
+
+        {internalProjects.map((project) => (
+          <article class:list={["dev-project", "reveal", project.reverse && "rev"]} id={project.id}>
+            <div class="dev-project-media">
+              <img src={project.media.src} alt={project.media.alt} />
+            </div>
+            <div class="dev-project-copy">
+              <span class="dev-project-kicker">{project.kicker}</span>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div class="tag-row">
+                {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+              </div>
+            </div>
+          </article>
+        ))}
+
+        <div class="dev-category-heading reveal">
+          <span>04</span>
+          <h3>Infraestructura</h3>
+        </div>
+
+        <!-- Self-hosted: contenido propio (pasos de recuperación, no encaja en la plantilla genérica) -->
+        <article class="dev-project reveal" id="self-hosted">
+          <div class="dev-project-media" style="padding: 2.5rem; display:flex; align-items:center; justify-content:center; background:#0a0f16;">
+            <div class="solution-diagram" style="transform: scale(1.8);" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5.5 5.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 9V7a1.5 1.5 0 0 1 1.5-1.5Z"></path>
+                <path d="M5.5 13.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17v-2a1.5 1.5 0 0 1 1.5-1.5Z"></path>
+                <path d="M7 8h.01"></path><path d="M7 16h.01"></path><path d="M10 8h6"></path><path d="M10 16h6"></path>
+              </svg>
+              <span class="solution-diagram-arrow"></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3.5 18.5 6v5.2c0 4.1-2.6 7.8-6.5 9.3-3.9-1.5-6.5-5.2-6.5-9.3V6L12 3.5Z"></path>
+                <path d="M9.6 11.8 11.3 13.5 14.7 10.1"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="dev-project-copy">
+            <span class="dev-project-kicker">Backup, disaster recovery y acceso remoto</span>
+            <h3>Infraestructura Self-Hosted</h3>
+            <p>
+              Combinamos <strong>Tailscale</strong> (red privada que conecta de forma segura los equipos de
+              distintas instituciones con nuestro servidor), <strong>UrBackup</strong> (servidor central de
+              backups que administramos nosotros, con clientes en cada equipo remoto haciendo copias automáticas
+              a través de esa red privada) y <strong>RustDesk self-hosted</strong> (servidor propio de acceso
+              remoto, usado tanto para soporte técnico como para que personal autorizado de una institución
+              trabaje desde su casa contra su computadora física en el edificio).
+            </p>
+            <p>
+              Tailscale, UrBackup y RustDesk son herramientas de terceros que integramos y administramos dentro
+              de infraestructura propia — nuestro valor está en el diseño, la implementación, la seguridad,
+              la operación y el soporte de todo el conjunto, no en el desarrollo de ese software.
+            </p>
+            <p><strong>Recuperación ante falla de disco</strong> — no es "backup de archivos", es disaster recovery del puesto completo:</p>
+            <ol class="recovery-steps">
+              <li>Falla el disco de una computadora de la institución.</li>
+              <li>Se reemplaza por un disco nuevo.</li>
+              <li>Se inicia el equipo con un pendrive/USB de recuperación.</li>
+              <li>El equipo se conecta a nuestro servidor.</li>
+              <li>Se recupera la última copia disponible.</li>
+              <li>El puesto vuelve a estar operativo, con el tiempo de inactividad reducido al mínimo.</li>
+            </ol>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>

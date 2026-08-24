@@ -2,6 +2,37 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { company } from "../data/site";
 
+const numbers = [
+  { value: "20+ años", label: "de trayectoria tecnológica" },
+  {
+    value: "128 instituciones",
+    label: "experiencia previa brindando asesoramiento tecnológico dentro de una organización educativa"
+  },
+  { value: "11 instituciones", label: "atendidas actualmente mediante servicios técnicos recurrentes" }
+];
+
+// Placeholders preparados para recibir foto/nombre/rol/resumen/especialidades/LinkedIn
+// de cada socio. Datos de Juan confirmados; el segundo socio queda a completar.
+const team = [
+  {
+    name: "Juan Reuter",
+    role: "Infraestructura, redes y desarrollo",
+    photo: "",
+    summary:
+      "Trayectoria tecnológica orientada a infraestructura IT, redes y servidores, con formación Cisco Networking Academy (programa CCNA completo). Desarrollo e implementación de sistemas asistidos por IA como parte del método de trabajo.",
+    specialties: ["Redes y MikroTik", "Servidores Linux", "Desarrollo de software"],
+    linkedin: ""
+  },
+  {
+    name: "",
+    role: "",
+    photo: "",
+    summary: "",
+    specialties: [],
+    linkedin: ""
+  }
+];
+
 const sliderItems = [
   {
     image: "/images/trabajos/formosa-pizarra-tactil.jpg",
@@ -175,6 +206,71 @@ const sliderItems = [
             Siguiente
           </button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section-compact">
+    <div class="container">
+      <div class="coverage-grid reveal">
+        {numbers.map((item) => (
+          <article class="metric">
+            <strong>{item.value}</strong>
+            <p>{item.label}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="section-heading editorial-heading reveal">
+        <p class="eyebrow">El equipo</p>
+        <h2>Capacidades complementarias dentro de una misma empresa.</h2>
+      </div>
+      <div class="team-grid reveal">
+        {team.map((person) => (
+          person.name ? (
+            <article class="team-person-card">
+              <div class="team-person-photo">
+                {person.photo ? <img src={person.photo} alt={person.name} /> : person.name.charAt(0)}
+              </div>
+              <h3>{person.name}</h3>
+              <span class="team-person-role">{person.role}</span>
+              <p class="team-person-summary">{person.summary}</p>
+              {person.specialties.length > 0 && (
+                <div class="team-person-specialties">
+                  {person.specialties.map((s) => <span class="tag">{s}</span>)}
+                </div>
+              )}
+              {person.linkedin && <a class="team-person-link" href={person.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>}
+            </article>
+          ) : (
+            <article class="team-person-card" style="justify-content: center; align-items: center; text-align: center; opacity: 0.6;">
+              <div class="team-person-photo">?</div>
+              <h3>Próximamente</h3>
+              <span class="team-person-role">Segundo socio</span>
+              <p class="team-person-summary">Espacio preparado para foto, rol, resumen y especialidades.</p>
+            </article>
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section-compact">
+    <div class="container">
+      <div class="ai-note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.8 14.1 8.1l4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L12 3.8Z"></path>
+        </svg>
+        <p>
+          Usamos herramientas modernas de inteligencia artificial como parte de nuestra metodología de trabajo:
+          para acelerar desarrollo, scripting, automatización, diagnóstico, documentación y prototipado.
+          <strong> IA como herramienta de ingeniería y productividad, siempre bajo supervisión técnica</strong> —
+          no reemplaza el criterio, lo acelera.
+        </p>
       </div>
     </div>
   </section>

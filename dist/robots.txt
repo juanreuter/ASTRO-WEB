@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reuter.com.ar/sitemap.xml

@@ -1,97 +1,22 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { company, coverage } from "../data/site";
+// El contenido de Cobertura se fusionó dentro de Servicios (sección "Alcance
+// real", id="alcance") para no sumar un ítem más al menú principal. Esta
+// página queda solo como redirect por si algo externo linkeaba /cobertura.
+// IMPORTANTE al desplegar: agregar además un 301 real vía .htaccess/Apache
+// (Redirect 301 /cobertura/ /servicios/#alcance) — un build estático no
+// puede emitir una redirección HTTP real, esto es solo el fallback client-side.
 ---
 
-<BaseLayout
-  title="Cobertura | REUTER IT NETWORKS"
-  description="Cobertura en toda Córdoba y alcance nacional según proyecto."
->
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-bg-grid"></div>
-      <div class="hero-bg-orb hero-bg-orb-1"></div>
-      <div class="hero-bg-noise"></div>
-    </div>
-    <div class="container hero-grid">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Cobertura geográfica</p>
-        <h1>Trabajamos en toda la provincia de Córdoba y podemos acompañar proyectos de mayor alcance.</h1>
-        <p class="lead">
-          La cobertura no es un detalle menor: forma parte de la propuesta de valor porque
-          habla de capacidad de respuesta, organización y ejecución.
-        </p>
-      </div>
-      <aside class="hero-panel reveal">
-        <div class="panel-stack">
-          <span class="panel-chip">Forma de trabajo</span>
-          <ul class="hero-list">
-            <li>Diagnóstico inicial claro.</li>
-            <li>Plan técnico según criticidad y ubicación.</li>
-            <li>Seguimiento del proyecto con un único referente.</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <div class="container">
-      <div class="section-heading editorial-heading reveal">
-        <p class="eyebrow">Zonas de cobertura</p>
-        <h2>Donde ya trabajamos y donde podemos acompañar.</h2>
-      </div>
-      <div class="coverage-grid reveal">
-      {coverage.map((item) => (
-        <article class="metric">
-          <strong>{item}</strong>
-          <p>Respuesta según el alcance técnico, logístico y operativo del proyecto.</p>
-        </article>
-      ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <div class="container two-column">
-      <div class="section-heading tight reveal">
-        <p class="eyebrow">Criterio comercial</p>
-        <h2>Mostrar alcance territorial también transmite seriedad.</h2>
-        <p>
-          Para una institución o empresa, saber que pueden responder fuera de una sola ciudad
-          reduce incertidumbre y mejora la percepción de respaldo. Eso incluye proyectos ejecutados
-          en otras provincias, como instalaciones realizadas en Formosa.
-        </p>
-      </div>
-      <div class="signal-panel reveal">
-        <div class="signal-row">
-          <span>Base principal</span>
-          <strong>Córdoba</strong>
-        </div>
-        <div class="signal-row">
-          <span>Interior provincial</span>
-          <strong>Trabajos planificados y soporte coordinado</strong>
-        </div>
-        <div class="signal-row">
-          <span>Proyectos nacionales</span>
-          <strong>Según necesidad técnica, viabilidad operativa y alcance del proyecto</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <div class="container hero-panel reveal">
-      <div class="section-heading">
-        <p class="eyebrow">Consulta</p>
-        <h2>Si querés evaluar un proyecto fuera de tu plaza habitual, conversemos.</h2>
-      </div>
-      <div class="actions">
-        <a class="button button-primary" href="/contacto">Consultar cobertura</a>
-        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
-          Escribir por WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/servicios/#alcance" />
+    <link rel="canonical" href="https://reuter.com.ar/servicios/" />
+    <meta name="robots" content="noindex,follow" />
+    <title>Cobertura | REUTER IT NETWORKS</title>
+  </head>
+  <body>
+    <p>Este contenido se movió a <a href="/servicios/#alcance">/servicios</a>.</p>
+  </body>
+</html>

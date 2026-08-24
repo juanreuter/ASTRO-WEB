@@ -14,7 +14,7 @@ export const navigation = [
   { href: "/", label: "Inicio" },
   { href: "/servicios", label: "Servicios" },
   { href: "/casos-reales", label: "Casos reales" },
-  { href: "/desarrollo", label: "Desarrollo & DevOps" },
+  { href: "/desarrollo", label: "Software y Plataformas" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }
 ];
@@ -38,7 +38,7 @@ export const services = [
     icon: "server",
     title: "Servidores y backups",
     description:
-      "Implementación de servidores locales, almacenamiento, políticas de respaldo y continuidad operativa."
+      "Servidores Linux propios y en la nube, contenedores Docker, backups automatizados, disaster recovery, acceso remoto y VPN — infraestructura self-hosted diseñada para que la operación no dependa de que nada salga bien a la primera."
   },
   {
     icon: "security",
@@ -157,5 +157,64 @@ export const coverage = [
   "Interior de Córdoba",
   "Formosa",
   "Alcance nacional según proyecto"
+];
+
+// Soluciones propias — Home, sección "Soluciones desarrolladas por REUTER IT NETWORKS".
+// Cada `href` ancla a su bloque en /desarrollo.
+export const ownSolutions = [
+  {
+    slug: "miaulanube",
+    category: "Plataforma educativa",
+    name: "MiAulaNube",
+    summary: "Plataforma multitenant de aulas virtuales y gestión escolar.",
+    bullets: [
+      "Multiinstitución: cada colegio opera de forma independiente",
+      "Cursos, unidades, temas y seguimiento académico",
+      "Tareas, evaluaciones y mensajería entre docentes y estudiantes"
+    ],
+    image: "/images/desarrollo/mian-hero.png",
+    imageAlt: "Landing de MiAulaNube"
+  },
+  {
+    slug: "comucon",
+    category: "Comunicación institucional",
+    name: "ComuCon",
+    summary: "Comunicaciones y autorizaciones digitales entre instituciones y familias.",
+    bullets: [
+      "Comunicados con confirmación de lectura",
+      "Autorizaciones con registro y trazabilidad de la respuesta",
+      "App Android, PWA e instalable en computadoras"
+    ],
+    image: "/images/desarrollo/comucon-logo.png",
+    imageAlt: "Logo de ComuCon",
+    imageContain: true
+  },
+  {
+    slug: "nettopo",
+    category: "Redes",
+    name: "NetTopo Discovery",
+    summary: "Descubrimiento, inventario y análisis profundo de redes.",
+    bullets: [
+      "Mapa de topología inferido automáticamente",
+      "Inventario de switches, APs y endpoints",
+      "Documentación de infraestructura lista para troubleshooting"
+    ],
+    image: "/images/trabajos/home-topologia-software-propio.png",
+    imageAlt: "Mapa de topología de red generado con NetTopo Discovery"
+  },
+  {
+    slug: "self-hosted",
+    category: "Infraestructura",
+    name: "Infraestructura Self-Hosted",
+    summary: "Backup, recuperación ante desastres y acceso remoto institucional.",
+    bullets: [
+      "Backups automáticos a servidor propio (UrBackup)",
+      "Recuperación completa de un puesto, no solo archivos",
+      "Acceso remoto seguro vía VPN privada (Tailscale + RustDesk)"
+    ],
+    image: "",
+    imageAlt: "",
+    diagram: true
+  }
 ];
 
