@@ -1,6 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { cases, company } from "../data/site";
+import { cases } from "../data/site";
+
+const villaCabreraSlides = [
+  {
+    image: "/images/trabajos/villa-cabrera-01.jpeg",
+    alt: "Pantalla digital de 75 pulgadas instalada en un colegio de barrio Villa Cabrera."
+  },
+  {
+    image: "/images/trabajos/villa-cabrera-02.jpeg",
+    alt: "Vista de la instalación de la pantalla digital de 75 pulgadas en Villa Cabrera."
+  },
+  {
+    image: "/images/trabajos/villa-cabrera-03.jpeg",
+    alt: "Conexión y ajuste de la pantalla digital de 75 pulgadas en el colegio de Villa Cabrera."
+  },
+  {
+    image: "/images/trabajos/villa-cabrera-04.jpeg",
+    alt: "Pantalla digital conectada y montada en aula de Villa Cabrera."
+  },
+  {
+    image: "/images/trabajos/villa-cabrera-05.jpeg",
+    alt: "Proceso de instalación de pantalla digital y vinculación a red en Villa Cabrera."
+  },
+  {
+    image: "/images/trabajos/villa-cabrera-06.jpeg",
+    alt: "Pantalla digital instalada en colegio de barrio Villa Cabrera."
+  },
+  {
+    image: "/images/trabajos/villa-cabrera-07.jpeg",
+    alt: "Vista final de la instalación y conexión de pantalla digital de 75 pulgadas en Villa Cabrera."
+  }
+];
 ---
 
 <BaseLayout
@@ -8,32 +39,76 @@ import { cases, company } from "../data/site";
   description="Casos y proyectos que muestran el enfoque integral de REUTER IT NETWORKS."
 >
   <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-bg-orb hero-bg-orb-1"></div>
+      <div class="hero-bg-noise"></div>
+    </div>
     <div class="container hero-grid">
-      <div class="hero-copy">
+      <div class="hero-copy reveal">
         <p class="eyebrow">Casos reales</p>
-        <h1>La mejor forma de demostrar criterio tecnico es mostrar como se resolvieron problemas concretos.</h1>
+        <h1>La mejor forma de demostrar criterio técnico es mostrar cómo se resolvieron problemas concretos.</h1>
         <p class="lead">
           Estos proyectos muestran instalaciones, soporte y puestas en marcha reales en
-          instituciones donde hacia falta resolver bien, documentar y dejar todo funcionando.
+          instituciones y empresas donde hacía falta resolver bien, documentar y dejar todo funcionando.
         </p>
       </div>
-      <aside class="hero-panel">
+      <aside class="hero-panel reveal">
         <div class="panel-stack">
           <span class="panel-chip">Lo que se ve en cada caso</span>
           <ul class="hero-list">
             <li>Problema concreto en contexto institucional.</li>
-            <li>Instalacion, configuracion o soporte ejecutado en sitio.</li>
-            <li>Resultado final con criterio tecnico y foco operativo.</li>
+            <li>Instalación, configuración o soporte ejecutado en sitio.</li>
+            <li>Resultado final con criterio técnico y foco operativo.</li>
           </ul>
         </div>
       </aside>
     </div>
   </section>
 
+  <section class="page-section page-section-compact">
+    <div class="container">
+      <article class="card case-featured-story reveal">
+        <div class="case-featured-copy">
+          <p class="eyebrow">Villa Cabrera, Córdoba Capital</p>
+          <h2>Instalación y conexión a red de pantalla digital de 75 pulgadas.</h2>
+          <p>
+            Trabajo reciente en colegio de barrio Villa Cabrera, con montaje, conexión a red y
+            puesta en marcha de pantalla digital para dejarla lista para uso real en aula.
+          </p>
+        </div>
+
+        <div class="mini-gallery" id="villa-cabrera-gallery">
+          <div class="mini-gallery-viewport">
+            <div class="mini-gallery-track" id="villa-cabrera-track">
+              {villaCabreraSlides.map((slide, index) => (
+                <figure class="mini-gallery-slide">
+                  <img src={slide.image} alt={slide.alt} loading={index === 0 ? "eager" : "lazy"} />
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <div class="mini-gallery-controls">
+            <button class="slider-button" type="button" id="villa-cabrera-prev" aria-label="Foto anterior">
+              Anterior
+            </button>
+
+            <div class="work-slider-dots" id="villa-cabrera-dots"></div>
+
+            <button class="slider-button" type="button" id="villa-cabrera-next" aria-label="Foto siguiente">
+              Siguiente
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="page-section">
     <div class="container case-grid">
       {cases.map((item) => (
-        <article class="card case-card">
+        <article class="card case-card reveal">
           {item.image ? (
             <div class="case-media">
               <img class="case-image" src={item.image} alt={item.imageAlt} loading="lazy" />
@@ -77,7 +152,7 @@ import { cases, company } from "../data/site";
             <p class="eyebrow">{item.location}</p>
             <h3>{item.title}</h3>
             <p><strong>Problema:</strong> {item.challenge}</p>
-            <p><strong>Solucion:</strong> {item.solution}</p>
+            <p><strong>Solución:</strong> {item.solution}</p>
             <p><strong>Resultado:</strong> {item.outcome}</p>
           </div>
         </article>
@@ -85,18 +160,72 @@ import { cases, company } from "../data/site";
     </div>
   </section>
 
-  <section class="page-section">
-    <div class="container hero-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Siguiente paso</p>
-        <h2>Con mas fotos, videos y antes/despues, esta pagina puede convertirse en una pieza comercial muy fuerte.</h2>
-      </div>
-      <div class="actions">
-        <a class="button button-primary" href="/contacto">Empezar proyecto</a>
-        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
-          Coordinar una charla
-        </a>
-      </div>
-    </div>
-  </section>
+  <script define:vars={{ villaSlideCount: villaCabreraSlides.length }}>
+    const gallery = document.querySelector("#villa-cabrera-gallery");
+    const track = document.querySelector("#villa-cabrera-track");
+    const prevButton = document.querySelector("#villa-cabrera-prev");
+    const nextButton = document.querySelector("#villa-cabrera-next");
+    const dotsHost = document.querySelector("#villa-cabrera-dots");
+    const slides = Array.from(document.querySelectorAll("#villa-cabrera-track .mini-gallery-slide"));
+
+    let currentIndex = 0;
+    let autoplayId;
+
+    const renderDots = () => {
+      if (!dotsHost) return;
+      dotsHost.innerHTML = "";
+      for (let index = 0; index < villaSlideCount; index += 1) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "slider-dot";
+        dot.setAttribute("aria-label", `Ir a la foto ${index + 1}`);
+        dot.addEventListener("click", () => {
+          updateSlider(index);
+          restartAutoplay();
+        });
+        dotsHost.appendChild(dot);
+      }
+    };
+
+    const syncDots = () => {
+      if (!dotsHost) return;
+      Array.from(dotsHost.querySelectorAll(".slider-dot")).forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === currentIndex);
+      });
+    };
+
+    const updateSlider = (index) => {
+      if (!track || !slides.length) return;
+      currentIndex = (index + villaSlideCount) % villaSlideCount;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      syncDots();
+    };
+
+    const restartAutoplay = () => {
+      if (autoplayId) window.clearInterval(autoplayId);
+      autoplayId = window.setInterval(() => updateSlider(currentIndex + 1), 3600);
+    };
+
+    prevButton?.addEventListener("click", () => {
+      updateSlider(currentIndex - 1);
+      restartAutoplay();
+    });
+
+    nextButton?.addEventListener("click", () => {
+      updateSlider(currentIndex + 1);
+      restartAutoplay();
+    });
+
+    gallery?.addEventListener("mouseenter", () => {
+      if (autoplayId) window.clearInterval(autoplayId);
+    });
+
+    gallery?.addEventListener("mouseleave", () => {
+      restartAutoplay();
+    });
+
+    renderDots();
+    updateSlider(0);
+    restartAutoplay();
+  </script>
 </BaseLayout>

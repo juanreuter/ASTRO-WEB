@@ -1,155 +1,161 @@
 export const company = {
   name: "REUTER IT NETWORKS",
   shortName: "REUTER",
-  tagline: "Soluciones tecnologicas integrales para instituciones en Cordoba.",
+  tagline: "Soluciones tecnológicas integrales para instituciones y empresas en Córdoba.",
   subtitle:
-    "Integramos redes, seguridad, servidores y software para que la tecnologia deje de ser un parche.",
+    "Integramos redes, seguridad, servidores y software para que la tecnología deje de ser un parche.",
   whatsappHref: "https://wa.me/5493512803872",
   email: "contacto@reuter.com.ar",
   phone: "+54 9 351-2803-872",
-  location:
-    "Cordoba Capital, Villa Carlos Paz, Despenaderos, Las Acequias y localidades del interior."
+  location: "Córdoba Capital, interior provincial y alcance nacional según proyecto."
 };
 
 export const navigation = [
   { href: "/", label: "Inicio" },
-  { href: "/instituciones", label: "Instituciones" },
+  { href: "/servicios", label: "Servicios" },
   { href: "/casos-reales", label: "Casos reales" },
+  { href: "/desarrollo", label: "Desarrollo & DevOps" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }
 ];
 
 export const highlights = [
-  "Un solo proveedor para infraestructura, seguridad, software y automatizacion.",
-  "Cobertura en toda la provincia de Cordoba con alcance nacional segun proyecto.",
-  "Soporte real para instituciones que no pueden darse el lujo de improvisar."
+  "Un solo proveedor para infraestructura, seguridad, software y automatización.",
+  "Cobertura en toda la provincia de Córdoba con alcance nacional según proyecto.",
+  "Soporte real para instituciones y empresas que no pueden darse el lujo de improvisar."
 ];
 
-export const partnerBrands = ["MikroTik", "Ubiquiti", "Dahua", "Hikvision", "HP", "TP-Link"];
+export const partnerBrands = ["MikroTik", "Ubiquiti", "Dahua", "Hikvision", "HP", "TP-Link", "Legamaster"];
 
 export const services = [
   {
+    icon: "network",
     title: "Redes y conectividad",
     description:
-      "Diseno de red, WiFi institucional, cableado estructurado y conectividad estable para edificios educativos, sanitarios, hoteleros y administrativos."
+      "Diseño de red, WiFi institucional, cableado estructurado y conectividad estable para edificios educativos, sanitarios, hoteleros y administrativos."
   },
   {
+    icon: "server",
     title: "Servidores y backups",
     description:
-      "Implementacion de servidores locales, almacenamiento, politicas de respaldo y continuidad operativa."
+      "Implementación de servidores locales, almacenamiento, políticas de respaldo y continuidad operativa."
   },
   {
+    icon: "security",
     title: "Seguridad y videovigilancia",
     description:
-      "Camaras, monitoreo, control de acceso y criterios de despliegue para espacios con circulacion constante."
+      "Cámaras, monitoreo, control de acceso y criterios de despliegue para espacios con circulación constante."
   },
   {
+    icon: "software",
     title: "Software y sistemas a medida",
     description:
       "Herramientas internas, automatizaciones y soluciones puntuales para procesos que hoy dependen de planillas o tareas manuales."
   },
   {
-    title: "Automatizacion y domotica",
+    icon: "automation",
+    title: "Automatización y domótica",
     description:
-      "Control inteligente de dispositivos, iluminacion y operaciones repetitivas con foco en orden y eficiencia."
+      "Control inteligente de dispositivos, iluminación y operaciones repetitivas con foco en orden y eficiencia."
   },
   {
+    icon: "support",
     title: "Soporte y mantenimiento",
     description:
-      "Diagnostico, correccion, seguimiento y mejora continua para infraestructura critica."
+      "Diagnóstico, corrección, seguimiento y mejora continua para infraestructura crítica."
   }
 ];
 
 export const educationalProblems = [
-  "Internet inestable en aulas, administracion o espacios comunes.",
-  "Crecimiento desordenado de camaras, equipos y cableado.",
-  "Varios proveedores resolviendo partes sueltas sin una vision global.",
-  "Falta de respaldo, monitoreo y criterios de seguridad basicos.",
-  "Tiempo perdido en fallas que afectan la operacion diaria."
+  "Internet inestable en aulas, administración o espacios comunes.",
+  "Crecimiento desordenado de cámaras, equipos y cableado.",
+  "Varios proveedores resolviendo partes sueltas sin una visión global.",
+  "Falta de respaldo, monitoreo y criterios de seguridad básicos.",
+  "Tiempo perdido en fallas que afectan la operación diaria."
 ];
 
 export const differentiators = [
   "Enfoque integral: resolvemos el problema completo, no una sola capa.",
-  "Criterio tecnico transversal para integrar redes, servidores, seguridad y software.",
-  "Capacidad de diagnostico en escenarios complejos donde otros proveedores se frenan.",
-  "Implementacion y acompanamiento con lenguaje claro para directivos y responsables operativos."
+  "Criterio técnico transversal para integrar redes, servidores, seguridad y software.",
+  "Capacidad de diagnóstico en escenarios complejos donde otros proveedores se frenan.",
+  "Implementación y acompañamiento con lenguaje claro para directivos y responsables operativos."
 ];
 
 export const cases = [
   {
-    title: "Instalacion de camaras en gimnasio escolar",
-    location: "Barrio Crisol, Cordoba Capital",
+    title: "Instalación de cámaras en gimnasio escolar",
+    location: "Barrio Crisol, Córdoba Capital",
     image: "/images/trabajos/instalacion-altura.jpg",
-    imageAlt: "Instalacion tecnica en altura dentro de un gimnasio escolar.",
+    imageAlt: "Instalación técnica en altura dentro de un gimnasio escolar.",
     challenge:
-      "El colegio necesitaba reforzar la cobertura de seguridad en el gimnasio con una instalacion confiable y bien resuelta en altura.",
+      "El colegio necesitaba reforzar la cobertura de seguridad en el gimnasio con una instalación confiable y bien resuelta en altura.",
     solution:
-      "Se realizo la instalacion de una camara en el gimnasio, resolviendo el montaje, el tendido y la puesta en servicio dentro del entorno escolar.",
+      "Se realizó la instalación de una cámara en el gimnasio, resolviendo el montaje, el tendido y la puesta en servicio dentro del entorno escolar.",
     outcome:
-      "La institucion sumo visibilidad y seguridad en un espacio clave, con una implementacion adaptada a las condiciones reales del lugar."
+      "La institución sumó visibilidad y seguridad en un espacio clave, con una implementación adaptada a las condiciones reales del lugar."
   },
   {
-    title: "Armado de rack y distribucion para red escolar",
-    location: "Escuela en Cosquin",
+    title: "Armado de rack y distribución para red escolar",
+    location: "Escuela en Cosquín",
     image: "/images/trabajos/rack-y-cableado.jpg",
-    imageAlt: "Instalacion de rack con patcheras y cableado estructurado para una escuela.",
+    imageAlt: "Instalación de rack con patcheras y cableado estructurado para una escuela.",
     challenge:
       "La escuela necesitaba centralizar conexiones, ordenar el cableado y distribuir la conectividad hacia antenas WiFi y dispositivos finales.",
     solution:
-      "Se implemento un rack con patcheras, cableado y organizacion fisica de la infraestructura para mejorar la distribucion de red y su mantenimiento.",
+      "Se implementó un rack con patcheras, cableado y organización física de la infraestructura para mejorar la distribución de red y su mantenimiento.",
     outcome:
-      "La instalacion quedo mucho mas ordenada, escalable y preparada para sostener mejor la conectividad de toda la institucion."
+      "La instalación quedó mucho más ordenada, escalable y preparada para sostener mejor la conectividad de toda la institución."
   },
   {
-    title: "Coordinacion tecnica de transmisiones en pandemia",
-    location: "Cordoba Capital",
+    title: "Coordinación técnica de transmisiones en pandemia",
+    location: "Córdoba Capital",
     image: "/images/trabajos/coordinacion-transmision.jpg",
-    imageAlt: "Puesto de trabajo para coordinacion tecnica de una transmision por Zoom y YouTube.",
+    imageAlt: "Puesto de trabajo para coordinación técnica de una transmisión por Zoom y YouTube.",
     challenge:
-      "Durante la pandemia hubo instituciones y organizaciones que necesitaron sostener reuniones y eventos por streaming sin margen para fallas tecnicas.",
+      "Durante la pandemia hubo instituciones y organizaciones que necesitaron sostener reuniones y eventos por streaming sin margen para fallas técnicas.",
     solution:
-      "Se coordino la operacion tecnica utilizando Zoom y YouTube, resolviendo monitoreo, emision y seguimiento de la transmision en tiempo real.",
+      "Se coordinó la operación técnica utilizando Zoom y YouTube, resolviendo monitoreo, emisión y seguimiento de la transmisión en tiempo real.",
     outcome:
-      "Los encuentros pudieron realizarse con continuidad, soporte tecnico concreto y una operacion mucho mas ordenada durante toda la emision."
+      "Los encuentros pudieron realizarse con continuidad, soporte técnico concreto y una operación mucho más ordenada durante toda la emisión."
   },
   {
-    title: "Instalacion de pizarras tactiles y canones proyectores",
+    title: "Instalación de pizarras táctiles y cañones proyectores",
     location: "Formosa, proyecto coordinado desde Buenos Aires",
     image: "/images/trabajos/formosa-pizarra-tactil.jpg",
-    imageAlt: "Instalacion y prueba de pizarra tactil en una institucion educativa de Formosa.",
+    imageAlt: "Pantalla y proyector instalados en funcionamiento durante el proyecto realizado en Formosa.",
     hoverImage: "/images/trabajos/formosa-pizarra-prueba.jpg",
-    hoverImageAlt: "Prueba de funcionamiento de pizarra tactil y proyector en Formosa.",
+    hoverImageAlt: "Segunda vista de la pantalla instalada y encendida durante la puesta en marcha en Formosa.",
     video: "/media/formosa-prueba-pantalla.mp4",
     videoPoster: "/images/trabajos/formosa-pizarra-tactil.jpg",
     challenge:
-      "Una empresa de Buenos Aires que habia vendido los equipos a Los Salesianos de Formosa necesitaba un equipo con experiencia real para manipular, instalar y poner en marcha tecnologia delicada en sitio.",
+      "Una empresa de Buenos Aires que había vendido los equipos a Los Salesianos de Formosa necesitaba un equipo con experiencia real para manipular, instalar y poner en marcha tecnología delicada en sitio.",
     solution:
-      "Se realizo la instalacion de pizarras tactiles y canones proyectores, resolviendo montaje, conexion, configuracion y pruebas para dejar el sistema funcionando correctamente dentro del aula.",
+      "Se realizó la instalación de pizarras táctiles y cañones proyectores, resolviendo montaje, conexión, configuración y pruebas para dejar el sistema funcionando correctamente dentro del aula.",
     outcome:
-      "La institucion quedo equipada para clases y presentaciones con tecnologia interactiva, y el proyecto pudo ejecutarse con respaldo tecnico concreto gracias a la experiencia previa en instalacion y configuracion de este tipo de equipos."
+      "La institución quedó equipada para clases y presentaciones con tecnología interactiva, y el proyecto pudo ejecutarse con respaldo técnico concreto gracias a la experiencia previa en instalación y configuración de este tipo de equipos."
   },
   {
-    title: "Segmentacion de red y tecnologia operativa para un bar",
-    location: "Zona de Guemes, Cordoba",
+    title: "Segmentación de red y tecnología operativa para un bar",
+    location: "Zona de Güemes, Córdoba",
     image: "/images/trabajos/bar-redes-y-pantalla.jpg",
-    imageAlt: "Infraestructura tecnologica instalada en un bar con pantalla LED y conectividad segmentada.",
+    imageAlt: "Infraestructura tecnológica instalada en un bar con pantalla LED y conectividad segmentada.",
     hoverImage: "/images/trabajos/bar-ap-unifi.jpg",
     hoverImageAlt: "Punto de acceso UniFi instalado en el sector del bar.",
     challenge:
-      "El bar necesitaba separar correctamente la operacion interna del acceso de clientes, sin mezclar el sistema del local, los tickets de Postnet de los meseros y el uso de gerencia en una sola red.",
+      "El bar necesitaba separar correctamente la operación interna del acceso de clientes, sin mezclar el sistema del local, los tickets de Postnet de los meseros y el uso de gerencia en una sola red.",
     solution:
-      "Se instalo un router MikroTik y un AP UniFi para dividir la conectividad en tres redes independientes: una para el sistema del bar y los tickets de cobro, otra para clientes y una tercera para gerencia. Ademas, se configuro una pantalla LED gigante y un sistema de conteo de horas trabajadas por huella digital.",
+      "Se instaló un router MikroTik y un AP UniFi para dividir la conectividad en tres redes independientes: una para el sistema del bar y los tickets de cobro, otra para clientes y una tercera para gerencia. Además, se configuró una pantalla LED gigante y un sistema de conteo de horas trabajadas por huella digital.",
     outcome:
-      "El negocio quedo con una infraestructura mucho mas ordenada y segura, con separacion clara de trafico, mejor control operativo y tecnologia de apoyo lista para el funcionamiento diario."
+      "El negocio quedó con una infraestructura mucho más ordenada y segura, con separación clara de tráfico, mejor control operativo y tecnología de apoyo lista para el funcionamiento diario."
   }
 ];
 
 export const coverage = [
-  "Cordoba Capital",
+  "Córdoba Capital",
   "Villa Carlos Paz",
-  "Despenaderos",
-  "Las Acequias",
-  "Interior de Cordoba",
+  "Despeñaderos",
+  "Interior de Córdoba",
   "Formosa",
-  "Alcance nacional segun proyecto"
+  "Alcance nacional según proyecto"
 ];
+

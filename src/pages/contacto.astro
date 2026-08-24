@@ -5,18 +5,23 @@ import { company } from "../data/site";
 
 <BaseLayout
   title="Contacto | REUTER IT NETWORKS"
-  description="Solicitar presupuesto o coordinar una evaluacion con REUTER IT NETWORKS."
+  description="Solicitar presupuesto o coordinar una evaluación con REUTER IT NETWORKS."
 >
   <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-bg-orb hero-bg-orb-1"></div>
+      <div class="hero-bg-noise"></div>
+    </div>
     <div class="container hero-grid">
-      <div class="hero-copy">
+      <div class="hero-copy reveal">
         <p class="eyebrow">Contacto</p>
-        <h1>Contanos que necesitas resolver y seguimos por WhatsApp.</h1>
+        <h1>Contanos qué necesitás resolver y seguimos por WhatsApp.</h1>
         <p class="lead">
-          La idea es simple: entender rapido el problema y avanzar con una conversacion clara.
+          La idea es simple: entender rápido el problema y avanzar con una conversación clara.
         </p>
       </div>
-      <aside class="hero-panel">
+      <aside class="hero-panel reveal">
         <div class="panel-stack">
           <span class="panel-chip">Canales directos</span>
           <ul class="hero-list">
@@ -31,8 +36,8 @@ import { company } from "../data/site";
 
   <section class="page-section">
     <div class="container contact-grid">
-      <article class="contact-card">
-        <p class="eyebrow">Formulario rapido</p>
+      <article class="contact-card reveal">
+        <p class="eyebrow">Formulario rápido</p>
         <h2>Este primer contacto sale directo por WhatsApp.</h2>
 
         <form class="contact-form" id="contact-form">
@@ -42,8 +47,8 @@ import { company } from "../data/site";
           </div>
 
           <div class="field">
-            <label for="organization">Institucion o empresa</label>
-            <input id="organization" name="organization" type="text" placeholder="Nombre de la institucion" />
+            <label for="organization">Institución o empresa</label>
+            <input id="organization" name="organization" type="text" placeholder="Nombre de la institución o empresa" />
           </div>
 
           <div class="field">
@@ -66,13 +71,13 @@ import { company } from "../data/site";
         </form>
       </article>
 
-      <aside class="contact-card">
+      <aside class="contact-card reveal">
         <p class="eyebrow">Base operativa</p>
-        <h2>Cordoba, con capacidad de movernos segun el proyecto.</h2>
+        <h2>Córdoba, con capacidad de movernos según el proyecto.</h2>
         <ul class="check-list">
           <li>WhatsApp como canal principal.</li>
-          <li>Email para seguimiento y documentacion.</li>
-          <li>Desplazamiento coordinado segun necesidad tecnica.</li>
+          <li>Email para seguimiento y documentación.</li>
+          <li>Desplazamiento coordinado según necesidad técnica.</li>
         </ul>
       </aside>
     </div>
@@ -101,7 +106,7 @@ import { company } from "../data/site";
       const lines = [
         "Hola, quiero consultar por un proyecto.",
         `Nombre: ${name}`,
-        organization ? `Institucion o empresa: ${organization}` : "",
+        organization ? `Institución o empresa: ${organization}` : "",
         locality ? `Localidad: ${locality}` : "",
         `Necesidad: ${need}`
       ].filter(Boolean);

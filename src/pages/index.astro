@@ -1,30 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { cases, company, partnerBrands, services } from "../data/site";
+import { company, partnerBrands } from "../data/site";
 
-const featuredServices = services.slice(0, 4);
-const featuredCases = cases.filter((item) =>
-  [
-    "Instalacion de pizarras tactiles y canones proyectores",
-    "Segmentacion de red y tecnologia operativa para un bar",
-    "Armado de rack y distribucion para red escolar"
-  ].includes(item.title)
-);
+const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
+// La cinta se repite dos veces para que el marquee haga loop sin cortes.
+const ribbonBrands = [...partnerBrands, ...partnerBrands];
 ---
 
 <BaseLayout
-  title="REUTER IT NETWORKS | Soluciones tecnologicas integrales"
-  description="Redes, servidores, seguridad, software y automatizacion para instituciones en Cordoba."
+  title="REUTER IT NETWORKS | Soluciones tecnológicas integrales"
+  description="Redes, servidores, seguridad, software y automatización para instituciones y empresas en Córdoba."
 >
-  <section class="hero hero-signature">
-    <div class="container hero-grid hero-grid-signature">
-      <div class="hero-copy">
-        <p class="eyebrow">Infraestructura que respalda la operacion diaria</p>
+  <section class="hero editorial-hero home-hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-bg-orb hero-bg-orb-1"></div>
+      <div class="hero-bg-orb hero-bg-orb-2"></div>
+      <div class="hero-bg-noise"></div>
+      <div class="hero-bg-particles" id="hero-particles"></div>
+    </div>
+    <div class="container editorial-grid">
+      <div class="editorial-copy reveal">
+        <p class="eyebrow">Infraestructura que respalda la operación diaria</p>
         <h1>
-          Cuando la tecnologia se vuelve un parche,
-          <span class="gradient-word">nosotros la ordenamos.</span>
+          Soluciones tecnológicas
+          <span class="gradient-word">integrales</span>
+          para instituciones y empresas
         </h1>
-        <p class="lead">{company.subtitle}</p>
+        <p class="lead">
+          Redes, servidores, cámaras y software integrados en una única solución confiable.
+        </p>
 
         <div class="actions">
           <a class="button button-primary" href="/contacto">Solicitar presupuesto</a>
@@ -33,119 +38,84 @@ const featuredCases = cases.filter((item) =>
           </a>
         </div>
 
-        <div class="brand-cloud compact-cloud">
-          {partnerBrands.map((brand) => <span class="brand-pill">{brand}</span>)}
-        </div>
+        <ul class="inline-proof">
+          <li>Diagnóstico antes que reemplazo.</li>
+          <li>Una sola estrategia para varias capas técnicas.</li>
+          <li>Criterio real para instituciones y empresas.</li>
+        </ul>
       </div>
 
-      <aside class="hero-showcase">
-        <div class="showcase-main">
-          <img src="/images/trabajos/rack-testeo-equipo.jpg" alt="Testeo tecnico de rack y equipamiento en una institucion." />
-          <div class="showcase-caption">
+      <div class="editorial-stage editorial-stage-full reveal">
+        <figure class="stage-primary stage-primary-large" data-lightbox>
+          <img src="/images/trabajos/home-equipo-rack.png" alt="Equipo técnico de REUTER frente a rack instalado y cableado en sitio." />
+          <figcaption>
             <small>Trabajo real en sitio</small>
-            <strong>Testeo, revision y puesta a punto del equipamiento antes de darlo por resuelto.</strong>
-          </div>
+            <strong>Testeo, revisión y puesta a punto antes de dar por resuelto un problema.</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-ribbon-section" aria-label="Marcas con las que trabajamos">
+    <div class="container">
+      <div class="brand-ribbon-mask">
+        <div class="brand-ribbon-track">
+          {ribbonBrands.map((brand) => (
+            <img class="brand-ribbon-logo" src={`/images/brands/${slugify(brand)}.png`} alt={brand} loading="lazy" />
+          ))}
         </div>
-
-        <article class="showcase-card card-a">
-          <img src="/images/trabajos/formosa-pizarra-tactil.jpg" alt="Pizarra tactil instalada en Formosa." />
-          <div>
-            <small>Formosa</small>
-            <strong>Instalacion y puesta en marcha de tecnologia delicada.</strong>
-          </div>
-        </article>
-
-        <article class="showcase-card card-b">
-          <img src="/images/trabajos/bar-redes-y-pantalla.jpg" alt="Pantalla LED y tecnologia operativa en un bar." />
-          <div>
-            <small>Guemes, Cordoba</small>
-            <strong>Red segmentada y operacion del negocio resuelta con criterio.</strong>
-          </div>
-        </article>
-      </aside>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Que hacemos</p>
-        <h2>Redes, seguridad, servidores y soporte con una sola estrategia tecnica.</h2>
-        <p>
-          No trabajamos por partes sueltas. Entramos para ordenar la base tecnica y dejar una
-          infraestructura mas estable, mantenible y clara.
-        </p>
-      </div>
-
-      <div class="grid service-grid">
-        {featuredServices.map((service, index) => (
-          <article class="card service-card">
-            <span class="service-index">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </article>
-        ))}
       </div>
     </div>
   </section>
 
-  <section class="page-section">
-    <div class="container">
-      <div class="section-heading">
+  <section class="page-section home-thesis">
+    <div class="container thesis-row">
+      <div class="thesis-copy reveal">
         <p class="eyebrow">Casos reales</p>
-        <h2>La confianza se termina de construir cuando el trabajo se puede mostrar.</h2>
-        <p>
-          Algunos proyectos muestran mejor que cualquier promesa el tipo de criterio con el que trabajamos.
-        </p>
+        <h2>No arrancamos diciendo: "Hay que comprar todo de nuevo", sino diagnosticando el problema.</h2>
       </div>
 
-      <div class="case-grid">
-        {featuredCases.map((item) => (
-          <article class="card case-card">
-            {item.image ? (
-              <div class="case-media">
-                <img class="case-image" src={item.image} alt={item.imageAlt} loading="lazy" />
-                {item.hoverImage && (
-                  <>
-                    <img
-                      class="case-image case-image-hover"
-                      src={item.hoverImage}
-                      alt={item.hoverImageAlt ?? item.imageAlt}
-                      loading="lazy"
-                    />
-                    <span class="case-swap-chip">Ver otra vista</span>
-                  </>
-                )}
-              </div>
-            ) : null}
-            <div class="case-body">
-              <p class="eyebrow">{item.location}</p>
-              <h3>{item.title}</h3>
-              <p>{item.outcome}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <div class="actions">
+      <div class="thesis-actions reveal">
+        <span class="mono-note">Cuando el trabajo se puede mostrar, la decisión se vuelve más clara.</span>
         <a class="button button-secondary" href="/casos-reales">Ver todos los casos</a>
       </div>
     </div>
   </section>
 
-  <section class="page-section">
-    <div class="container hero-panel">
-      <div class="section-heading">
+  <section class="page-section home-cta">
+    <div class="container cta-row">
+      <div class="cta-copy reveal">
         <p class="eyebrow">Contacto directo</p>
-        <h2>Si hoy dependes de demasiados parches, conversemos antes de que el problema crezca.</h2>
+        <h2>Si hoy dependés de demasiados parches, conversemos antes de que el problema crezca.</h2>
       </div>
 
-      <div class="actions">
-        <a class="button button-primary" href="/contacto">Pedir diagnostico</a>
+      <div class="actions reveal">
+        <a class="button button-primary" href="/contacto">Pedir diagnóstico</a>
         <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
           Hablar ahora por WhatsApp
         </a>
       </div>
     </div>
   </section>
+
+  <script>
+    // Partículas decorativas del hero de Home.
+    (function () {
+      const host = document.getElementById("hero-particles");
+      if (!host) return;
+      const COUNT = 18;
+      for (let i = 0; i < COUNT; i++) {
+        const p = document.createElement("span");
+        p.style.left = Math.random() * 100 + "%";
+        p.style.bottom = -Math.random() * 30 + "%";
+        p.style.animationDuration = 10 + Math.random() * 14 + "s";
+        p.style.animationDelay = Math.random() * 12 + "s";
+        p.style.width = p.style.height = 2 + Math.random() * 3 + "px";
+        host.appendChild(p);
+      }
+    })();
+  </script>
 </BaseLayout>
+
+

@@ -1,60 +1,166 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { company, services } from "../data/site";
+import { services } from "../data/site";
+
+const icons = {
+  network: [
+    "M4 9.5h16",
+    "M8 5.5h8",
+    "M8 13.5h8",
+    "M6.5 17.5h11",
+    "M5.5 4h13a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 18.5 16h-13A1.5 1.5 0 0 1 4 14.5v-9A1.5 1.5 0 0 1 5.5 4Z"
+  ],
+  server: [
+    "M5.5 5.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 9V7a1.5 1.5 0 0 1 1.5-1.5Z",
+    "M5.5 13.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17v-2a1.5 1.5 0 0 1 1.5-1.5Z",
+    "M7 8h.01",
+    "M7 16h.01",
+    "M10 8h6",
+    "M10 16h6"
+  ],
+  security: [
+    "M12 3.5 18.5 6v5.2c0 4.1-2.6 7.8-6.5 9.3-3.9-1.5-6.5-5.2-6.5-9.3V6L12 3.5Z",
+    "M9.6 11.8 11.3 13.5 14.7 10.1"
+  ],
+  software: [
+    "M8 6.5 4.5 10 8 13.5",
+    "M16 6.5 19.5 10 16 13.5",
+    "M13.5 4.5 10.5 15.5",
+    "M5.5 18.5h13"
+  ],
+  automation: [
+    "M12 3.8 14.1 8.1l4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L12 3.8Z",
+    "M12 14.6v4.6",
+    "M9.2 18h5.6"
+  ],
+  support: [
+    "M12 5.2a5.8 5.8 0 0 1 5.8 5.8v3.7",
+    "M6.2 14.7A5.8 5.8 0 0 1 12 5.2",
+    "M5.4 12.8h1.4a1.4 1.4 0 0 1 1.4 1.4v2.1a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 16.3v-2.1a1.4 1.4 0 0 1 1.4-1.4Z",
+    "M17.2 12.8h1.4a1.4 1.4 0 0 1 1.4 1.4v2.1a1.4 1.4 0 0 1-1.4 1.4h-1.4a1.4 1.4 0 0 1-1.4-1.4v-2.1a1.4 1.4 0 0 1 1.4-1.4Z",
+    "M9.8 17.7c.6.5 1.4.8 2.2.8s1.6-.3 2.2-.8"
+  ]
+} as const;
+
+const territoryProjects = [
+  {
+    label: "Córdoba Capital",
+    title: "Trabajo urbano y respuesta en sitio",
+    image: "/images/trabajos/instalacion-altura.jpg",
+    alt: "Instalación de cámara en un gimnasio escolar de Córdoba Capital.",
+    description:
+      "En Córdoba Capital trabajamos tanto en instituciones educativas como en comercios y oficinas. Un ejemplo claro fue la instalación de cámaras en el gimnasio de una escuela de Barrio Crisol, resolviendo montaje en altura y puesta en servicio en un entorno real de uso diario."
+  },
+  {
+    label: "Interior provincial",
+    title: "Implementaciones planificadas fuera de capital",
+    image: "/images/trabajos/rack-y-cableado.jpg",
+    alt: "Rack y cableado estructurado instalados en una escuela del interior de Córdoba.",
+    description:
+      "En el interior de Córdoba también ejecutamos proyectos completos. En una escuela de Cosquín armamos rack, patcheras y distribución de red hacia antenas WiFi y dispositivos finales, dejando una base técnica mucho más ordenada y mantenible."
+  },
+  {
+    label: "Otras provincias",
+    title: "Proyectos convocados por experiencia específica",
+    image: "/images/trabajos/formosa-pizarra-tactil.jpg",
+    alt: "Instalación de pizarra táctil y proyector en Formosa.",
+    description:
+      "También podemos trabajar fuera de la provincia cuando el proyecto lo justifica. En Formosa instalamos pizarras táctiles y cañones proyectores para Los Salesianos, en un trabajo solicitado desde Buenos Aires por la experiencia previa en el manejo, configuración y prueba de equipos delicados."
+  }
+];
 ---
 
 <BaseLayout
   title="Servicios | REUTER IT NETWORKS"
-  description="Redes, seguridad, servidores, software y automatizacion con enfoque integral."
+  description="Redes, seguridad, servidores, software y automatización con enfoque integral."
 >
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
+  <section class="hero editorial-hero services-editorial">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-bg-orb hero-bg-orb-1"></div>
+      <div class="hero-bg-noise"></div>
+    </div>
+    <div class="container editorial-grid services-editorial-grid">
+      <div class="editorial-copy reveal">
         <p class="eyebrow">Servicios</p>
-        <h1>Una oferta pensada para resolver el sistema completo, no tareas sueltas.</h1>
+        <h1>Nos especializamos en diagnosticar problemas complejos y encontrar soluciones donde otros proveedores no llegan.</h1>
         <p class="lead">
-          Cada servicio esta pensado para integrarse con el resto. Esa coherencia es la que
-          evita fallas repetidas, dependencias innecesarias y decisiones aisladas.
+          No entramos a resolver una parte aislada y desaparecer. Ordenamos la base técnica,
+          integramos lo que haga falta y dejamos una estructura más clara para operar y crecer.
         </p>
+
+        <div class="tag-row">
+          <span class="tag">Escuelas e institutos</span>
+          <span class="tag">Hoteles</span>
+          <span class="tag">Clínicas y sanatorios</span>
+          <span class="tag">Comercios y oficinas</span>
+        </div>
       </div>
 
-      <aside class="hero-panel">
-        <div class="panel-stack">
-          <span class="panel-chip">Modelo de trabajo</span>
-          <ul class="hero-list">
-            <li>Diagnostico tecnico y operativo.</li>
-            <li>Propuesta concreta de implementacion.</li>
-            <li>Despliegue, seguimiento y soporte.</li>
-          </ul>
-        </div>
-      </aside>
+      <figure class="diagnostic-figure diagnostic-figure-hero reveal">
+        <img
+          src="/images/trabajos/home-topologia-software-propio.png"
+          alt="Escaneo y detección de topología profunda de red con software propio de REUTER IT."
+        />
+        <figcaption>
+          <small>Servicio exclusivo</small>
+          <strong>Escaneo y detección de Topología Profunda con Software propio.</strong>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="page-section">
+  <section class="page-section services-list-section">
     <div class="container">
-      <div class="grid">
+      <div class="section-heading editorial-heading reveal">
+        <p class="eyebrow">Qué hacemos</p>
+        <h2>Seis áreas que se conectan entre sí.</h2>
+      </div>
+
+      <div class="service-listing reveal">
         {services.map((service) => (
-          <article class="card">
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+          <article class="service-line">
+            <span class="service-node" aria-hidden="true"></span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                {icons[service.icon as keyof typeof icons].map((path) => (
+                  <path d={path}></path>
+                ))}
+              </svg>
+            </span>
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="page-section">
-    <div class="container hero-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Contacto</p>
-        <h2>Podemos ayudarte a ordenar la infraestructura antes de que el problema escale.</h2>
+  <section class="page-section territory-section">
+    <div class="container">
+      <div class="section-heading editorial-heading reveal">
+        <p class="eyebrow">Alcance real</p>
+        <h2>Trabajamos en capital, en el interior y también fuera de la provincia.</h2>
       </div>
-      <div class="actions">
-        <a class="button button-primary" href="/contacto">Solicitar presupuesto</a>
-        <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
-          Hablar por WhatsApp
-        </a>
+
+      <div class="story-rows">
+        {territoryProjects.map((project, index) => (
+          <article class:list={["story-row", "reveal", index % 2 === 1 && "is-reverse"]}>
+            <div class="story-row-media">
+              <img src={project.image} alt={project.alt} loading="lazy" />
+              <span class="story-node story-node-a" aria-hidden="true"></span>
+              <span class="story-node story-node-b" aria-hidden="true"></span>
+            </div>
+
+            <div class="story-row-copy">
+              <p class="eyebrow">{project.label}</p>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
