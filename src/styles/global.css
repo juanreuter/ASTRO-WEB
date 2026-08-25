@@ -38,6 +38,11 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* El nav off-canvas mobile es position:fixed + transform cuando está
+     cerrado; al ser "fixed" queda fuera del contenedor de body, así que
+     overflow-x:hidden en body solo no alcanza a contenerlo (sumaba ~320px
+     de scroll horizontal fantasma en TODAS las páginas). Se repite acá. */
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -1906,6 +1911,8 @@ p {
   .nav {
     position: fixed;
     inset: 0 0 0 auto;
+    height: 100vh;
+    height: 100dvh;
     width: min(82vw, 22rem);
     background: #0a0a0a;
     border-left: 1px solid var(--line-strong);
