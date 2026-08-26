@@ -1,0 +1,5 @@
+# /cobertura se fusionó dentro de /servicios#alcance (ver commit "Reconciliar
+# el proyecto Astro con el sitio en producción"). Redirect 301 real para SEO;
+# la página estática en /cobertura/ que también redirige por JS queda como
+# respaldo, pero esta regla la intercepta antes de que se sirva.
+RedirectMatch 301 ^/cobertura/?$ https://reuter.com.ar/servicios/#alcance
