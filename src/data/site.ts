@@ -159,7 +159,7 @@ export const coverage = [
   "Alcance nacional según proyecto"
 ];
 
-// Soluciones propias — Home, sección "Soluciones desarrolladas por REUTER IT NETWORKS".
+// Soluciones propias — Home, sección "Nuestras soluciones".
 // Cada `href` ancla a su bloque en /desarrollo.
 export const ownSolutions = [
   {
