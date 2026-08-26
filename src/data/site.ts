@@ -212,9 +212,8 @@ export const ownSolutions = [
       "Recuperación completa de un puesto, no solo archivos",
       "Acceso remoto seguro vía VPN privada (Tailscale + RustDesk)"
     ],
-    image: "",
-    imageAlt: "",
-    diagram: true
+    image: "/images/desarrollo/self-hosted-arquitectura.png",
+    imageAlt: "Diagrama de la arquitectura self-hosted de backup, recuperación y acceso remoto de REUTER: Tailscale, UrBackup y RustDesk"
   }
 ];
 

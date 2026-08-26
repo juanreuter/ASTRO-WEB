@@ -131,6 +131,9 @@ const internalProjects = [
     .dev-project-media img { width: 100%; display: block; }
     .dev-project-media.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(59, 130, 246, 0.15); }
     .dev-project-media.two-up img { height: 260px; object-fit: cover; }
+    .dev-project-media.phone-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background: rgba(59, 130, 246, 0.15); }
+    .dev-project-media.phone-gallery img { width: 100%; display: block; }
+    @media (max-width: 640px) { .dev-project-media.phone-gallery { grid-template-columns: repeat(2, 1fr); } }
     .dev-project-kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 0.75rem; display: block; }
     .dev-project-copy h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.5rem, 2.2vw, 2rem); margin-bottom: 0.9rem; letter-spacing: -0.01em; }
     .dev-project-copy p { margin-bottom: 1.1rem; }
@@ -235,10 +238,13 @@ const internalProjects = [
           </article>
         ))}
 
-        <!-- ComuCon: contenido propio (diagrama de flujo, no encaja en la plantilla genérica) -->
+        <!-- ComuCon: contenido propio (capturas reales de la app, no encaja en la plantilla genérica) -->
         <article class="dev-project rev reveal" id="comucon">
-          <div class="dev-project-media" style="padding: 2.5rem; display:flex; align-items:center; justify-content:center; background:#0a0f16;">
-            <img src="/images/desarrollo/comucon-logo.png" alt="Logo de ComuCon" style="max-width: 220px;" />
+          <div class="dev-project-media phone-gallery">
+            <img src="/images/desarrollo/comucon-1.jpg" alt="Pantalla de inicio de sesión de la app ComuCon" loading="lazy" />
+            <img src="/images/desarrollo/comucon-2.jpg" alt="Listado de comunicados y autorizaciones enviados en ComuCon, con estado de firma de los padres" loading="lazy" />
+            <img src="/images/desarrollo/comucon-3.jpg" alt="Detalle de una autorización con los padres que todavía no firmaron" loading="lazy" />
+            <img src="/images/desarrollo/comucon-4.jpg" alt="Selector para crear una nueva autorización o comunicado en ComuCon" loading="lazy" />
           </div>
           <div class="dev-project-copy">
             <span class="dev-project-kicker">Comunicación institucional — Comunidad Conectada</span>
@@ -342,19 +348,12 @@ const internalProjects = [
 
         <!-- Self-hosted: contenido propio (pasos de recuperación, no encaja en la plantilla genérica) -->
         <article class="dev-project reveal" id="self-hosted">
-          <div class="dev-project-media" style="padding: 2.5rem; display:flex; align-items:center; justify-content:center; background:#0a0f16;">
-            <div class="solution-diagram" style="transform: scale(1.8);" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5.5 5.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 9V7a1.5 1.5 0 0 1 1.5-1.5Z"></path>
-                <path d="M5.5 13.5h13a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17v-2a1.5 1.5 0 0 1 1.5-1.5Z"></path>
-                <path d="M7 8h.01"></path><path d="M7 16h.01"></path><path d="M10 8h6"></path><path d="M10 16h6"></path>
-              </svg>
-              <span class="solution-diagram-arrow"></span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3.5 18.5 6v5.2c0 4.1-2.6 7.8-6.5 9.3-3.9-1.5-6.5-5.2-6.5-9.3V6L12 3.5Z"></path>
-                <path d="M9.6 11.8 11.3 13.5 14.7 10.1"></path>
-              </svg>
-            </div>
+          <div class="dev-project-media">
+            <img
+              src="/images/desarrollo/self-hosted-arquitectura.png"
+              alt="Diagrama de la arquitectura self-hosted de backup, recuperación ante desastres y acceso remoto: instituciones conectadas por Tailscale VPN a un servidor propio con UrBackup y RustDesk self-hosted, con acceso remoto para personal administrativo y soporte técnico."
+              loading="lazy"
+            />
           </div>
           <div class="dev-project-copy">
             <span class="dev-project-kicker">Backup, disaster recovery y acceso remoto</span>
