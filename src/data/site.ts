@@ -81,7 +81,21 @@ export const differentiators = [
   "Implementación y acompañamiento con lenguaje claro para directivos y responsables operativos."
 ];
 
-export const cases = [
+interface CaseItem {
+  title: string;
+  location: string;
+  image?: string;
+  imageAlt?: string;
+  challenge: string;
+  solution: string;
+  outcome: string;
+  hoverImage?: string;
+  hoverImageAlt?: string;
+  video?: string;
+  videoPoster?: string;
+}
+
+export const cases: CaseItem[] = [
   {
     title: "Instalación de cámaras en gimnasio escolar",
     location: "Barrio Crisol, Córdoba Capital",

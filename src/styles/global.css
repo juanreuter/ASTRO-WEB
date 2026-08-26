@@ -1698,21 +1698,6 @@ p {
 }
 .solution-media img { width: 100%; height: 100%; object-fit: cover; }
 .solution-media.is-contain img { width: 65%; height: 65%; object-fit: contain; }
-.solution-diagram {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  color: var(--accent);
-}
-.solution-diagram svg { width: 2.4rem; height: 2.4rem; }
-.solution-diagram-arrow { width: 2.5rem; height: 1px; background: var(--line-strong); position: relative; }
-.solution-diagram-arrow::after {
-  content: "";
-  position: absolute; right: 0; top: -3px;
-  border: 3.5px solid transparent;
-  border-left-color: var(--line-strong);
-}
 .solution-body { padding: 1.5rem 1.6rem 1.8rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; }
 .solution-category {
   font-family: var(--font-mono);

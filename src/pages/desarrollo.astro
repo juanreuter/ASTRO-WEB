@@ -452,7 +452,7 @@ const internalProjects = [
       const prevBtn = slider.querySelector(".comucon-nav.prev");
       const nextBtn = slider.querySelector(".comucon-nav.next");
       let index = 0;
-      let autoplayId;
+      let autoplayId: ReturnType<typeof window.setInterval> | undefined;
 
       slides.forEach((_, i) => {
         const dot = document.createElement("button");
@@ -468,10 +468,10 @@ const internalProjects = [
       const dots = Array.from(dotsHost.querySelectorAll(".comucon-dot"));
 
       function update() {
-        track.style.transform = `translateX(-${index * 100}%)`;
+        track!.style.transform = `translateX(-${index * 100}%)`;
         dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
       }
-      function goTo(i) {
+      function goTo(i: number) {
         index = (i + slides.length) % slides.length;
         update();
       }
