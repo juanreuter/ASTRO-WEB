@@ -1,32 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://reuter.com.ar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://reuter.com.ar/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://reuter.com.ar/servicios/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/servicios/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/servicios/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reuter.com.ar/en/services/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/servicios/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/servicios/" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://reuter.com.ar/casos-reales/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/casos-reales/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/case-studies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/casos-reales/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reuter.com.ar/en/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/casos-reales/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/case-studies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/casos-reales/" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://reuter.com.ar/desarrollo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/desarrollo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/software/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/desarrollo/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reuter.com.ar/en/software/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/desarrollo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/software/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/desarrollo/" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://reuter.com.ar/nosotros/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/nosotros/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/nosotros/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reuter.com.ar/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/nosotros/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/nosotros/" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://reuter.com.ar/contacto/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/contacto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/contacto/" />
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://reuter.com.ar/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://reuter.com.ar/contacto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://reuter.com.ar/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reuter.com.ar/contacto/" />
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

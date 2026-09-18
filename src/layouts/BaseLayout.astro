@@ -105,25 +105,39 @@ const altLangUrl = altLangHref ? new URL(altLangHref, siteUrl) : undefined;
     <style>
       .lang-switch {
         display: inline-flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 0.2rem;
         min-width: 2.55rem;
         height: 2.55rem;
-        padding: 0 0.5rem;
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        color: var(--text-soft);
+        padding: 0.3rem 0.5rem;
         border: 1px solid var(--line-strong);
         border-radius: var(--radius);
         text-decoration: none;
         transition: all 0.2s ease;
       }
       .lang-switch:hover {
-        color: var(--accent);
-        border-color: var(--accent);
-        background: var(--accent-soft);
+        border-color: var(--line-bright);
+        background: var(--bg-elev);
+      }
+      .lang-switch-flag {
+        width: 1.35rem;
+        height: auto;
+        display: block;
+        border-radius: 2px;
+        box-shadow: 0 0 0 1px var(--line);
+      }
+      .lang-switch-code {
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--text-soft);
+        line-height: 1;
+      }
+      .lang-switch:hover .lang-switch-code {
+        color: var(--text);
       }
     </style>
   </head>
@@ -146,7 +160,32 @@ const altLangUrl = altLangHref ? new URL(altLangHref, siteUrl) : undefined;
           <div class="header-actions">
             {altLangHref && (
               <a class="lang-switch" href={altLangHref} aria-label={t.switchAriaLabel}>
-                {t.switchTo}
+                {lang === "es" ? (
+                  <svg class="lang-switch-flag" viewBox="0 0 32 24" role="img" aria-hidden="true">
+                    <clipPath id="uk-clip"><rect width="32" height="24" rx="2" /></clipPath>
+                    <g clip-path="url(#uk-clip)">
+                      <rect width="32" height="24" fill="#3a3a38" />
+                      <g stroke="#f5f5f0" stroke-width="4.5">
+                        <line x1="0" y1="0" x2="32" y2="24" />
+                        <line x1="32" y1="0" x2="0" y2="24" />
+                      </g>
+                      <g stroke="#8a8a85" stroke-width="1.6">
+                        <line x1="0" y1="0" x2="32" y2="24" />
+                        <line x1="32" y1="0" x2="0" y2="24" />
+                      </g>
+                      <rect x="12" width="8" height="24" fill="#f5f5f0" />
+                      <rect y="8" width="32" height="8" fill="#f5f5f0" />
+                      <rect x="14" width="4" height="24" fill="#8a8a85" />
+                      <rect y="10" width="32" height="4" fill="#8a8a85" />
+                    </g>
+                  </svg>
+                ) : (
+                  <svg class="lang-switch-flag" viewBox="0 0 32 24" role="img" aria-hidden="true">
+                    <rect width="32" height="24" rx="2" fill="#8a8a85" />
+                    <rect y="6" width="32" height="12" fill="#f5f5f0" />
+                  </svg>
+                )}
+                <span class="lang-switch-code">{t.switchTo}</span>
               </a>
             )}
             <a class="button button-primary header-cta" href={company.whatsappHref} target="_blank" rel="noreferrer">
