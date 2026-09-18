@@ -1,39 +1,39 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-// Proyectos con formato "uniforme" (imagen + copy + tags), agrupados por categoría.
-// ComuCon e Infraestructura Self-Hosted tienen contenido propio (diagrama de flujo /
-// pasos de recuperación) y se escriben aparte, más abajo en el markup.
+// Projects with a "uniform" format (image + copy + tags), grouped by category.
+// ComuCon and Self-Hosted Infrastructure have their own content (flow diagram /
+// recovery steps) and are written separately, further down in the markup.
 const platformProjects = [
   {
     id: "miaulanube",
-    kicker: "Plataforma educativa (LMS) — multitenant",
+    kicker: "Educational platform (LMS) — multi-tenant",
     title: "MiAulaNube",
     description:
-      "Un aula virtual completa construida desde cero: multiinstitución (cada colegio opera de forma independiente dentro de la misma arquitectura), cursos con unidades y temas, evaluaciones con corrección automática, tareas con entrega y calificación, foros, mensajería interna, notificaciones (push y email) y grabación de clases con pizarra digital. Diseñada desde la experiencia concreta trabajando con instituciones educativas. Hoy está en producción, con un demo público que cualquiera puede probar.",
-    link: { href: "https://miaulanube.com", label: "Ver miaulanube.com ↗" },
-    tags: ["Next.js", "PostgreSQL", "Prisma", "Docker", "Multitenant"],
-    media: { type: "single" as const, src: "/images/desarrollo/mian-hero.png", alt: "Landing de MiAulaNube" }
+      "A complete virtual classroom built from scratch: multi-institution (each school operates independently within the same architecture), courses with units and topics, auto-graded assessments, assignments with submission and grading, forums, internal messaging, notifications (push and email), and class recording with a digital whiteboard. Designed from real, hands-on experience working with educational institutions. It's in production today, with a public demo anyone can try.",
+    link: { href: "https://miaulanube.com", label: "Visit miaulanube.com ↗" },
+    tags: ["Next.js", "PostgreSQL", "Prisma", "Docker", "Multi-tenant"],
+    media: { type: "single" as const, src: "/images/desarrollo/mian-hero.png", alt: "MiAulaNube landing page" }
   }
 ];
 
 const toolProjects = [
   {
     id: "nettopo",
-    kicker: "Descubrimiento y planimetría de redes",
+    kicker: "Network discovery & mapping",
     title: "NetTopo Discovery + NetPlanner",
-    lead: "Pasar de una red que nadie conoce completamente a una infraestructura relevada, visible y documentada.",
+    lead: "Going from a network nobody fully understands to infrastructure that's surveyed, visible, and documented.",
     descriptionPre:
-      "Un motor de descubrimiento automático que releva la topología real de una red — vecinos por LLDP/CDP/MNDP, tablas MAC, ARP y datos directos de routers MikroTik vía RouterOS — y lo vuelca en ",
+      "An automatic discovery engine that maps a network's real topology — neighbors via LLDP/CDP/MNDP, MAC tables, ARP, and direct data from MikroTik routers via RouterOS — and feeds it into ",
     descriptionStrong: "NetPlanner",
     descriptionPost:
-      ", una herramienta propia de planimetría visual donde cada equipo, puerto y conexión queda documentado y navegable. Pensado para poder salir a relevar una red a campo con una notebook o una Raspberry Pi, y para agilizar el troubleshooting el día que algo falla.",
-    tags: ["Python", "SNMP / LLDP / CDP / MNDP", "ARP / tablas MAC", "RouterOS", "Node.js", "Raspberry Pi"],
+      ", an in-house visual mapping tool where every device, port, and connection is documented and navigable. Built to survey a network in the field with just a laptop or a Raspberry Pi, and to speed up troubleshooting the day something breaks.",
+    tags: ["Python", "SNMP / LLDP / CDP / MNDP", "ARP / MAC tables", "RouterOS", "Node.js", "Raspberry Pi"],
     media: {
       type: "two-up" as const,
       items: [
-        { src: "/images/desarrollo/netplanner-list.png", alt: "Lista de equipos en NetPlanner" },
-        { src: "/images/desarrollo/netplanner-topo.png", alt: "Mapa de topología en NetPlanner" }
+        { src: "/images/desarrollo/netplanner-list.png", alt: "Equipment list in NetPlanner" },
+        { src: "/images/desarrollo/netplanner-topo.png", alt: "Topology map in NetPlanner" }
       ]
     }
   }
@@ -42,39 +42,39 @@ const toolProjects = [
 const internalProjects = [
   {
     id: "facturacion",
-    kicker: "Sistema de gestión interna",
-    title: "Facturación IT Network",
+    kicker: "Internal management system",
+    title: "Internal Billing System",
     description:
-      "Sistema propio para administrar clientes, cargar tareas realizadas y generar facturas mensuales, con reparto automático de ingresos entre socios y sincronización en tiempo real contra una base SQL propia. Reemplazó planillas sueltas por un único lugar de trabajo.",
-    tags: ["JavaScript", "SQL", "Backend propio"],
-    media: { type: "single" as const, src: "/images/desarrollo/facturacion-stats.png", alt: "Panel del sistema de facturación" }
+      "An in-house system to manage clients, log completed tasks, and generate monthly invoices, with automatic revenue splitting between partners and real-time sync against a custom SQL database. Replaced loose spreadsheets with a single place to work.",
+    tags: ["JavaScript", "SQL", "Custom backend"],
+    media: { type: "single" as const, src: "/images/desarrollo/facturacion-stats.png", alt: "Billing system dashboard" }
   },
   {
     id: "cefyt",
-    kicker: "Gestión académica",
-    title: "CEFyT — Instituto Superior",
+    kicker: "Academic management",
+    title: "CEFyT — Higher Education Institute",
     description:
-      "Sistema de gestión para un instituto de nivel superior: carreras, alumnos, docentes, materias, calendario académico con horarios por carrera y año, e historial de inscripciones — todo en un panel institucional propio, a medida de cómo trabaja el instituto.",
+      "A management system for a higher education institute: degree programs, students, faculty, courses, an academic calendar with schedules by program and year, and enrollment history — all in a custom institutional dashboard, tailored to how the institute actually works.",
     tags: ["PHP", "MySQL"],
-    media: { type: "single" as const, src: "/images/desarrollo/cefyt-stats.png", alt: "Panel de administración de CEFyT" },
+    media: { type: "single" as const, src: "/images/desarrollo/cefyt-stats.png", alt: "CEFyT administration dashboard" },
     reverse: true
   }
 ];
 ---
 
 <BaseLayout
-  title="Software y Plataformas | REUTER IT NETWORKS"
-  description="Plataformas propias, herramientas de red, sistemas de gestión a medida e infraestructura self-hosted: el software real detrás de la infraestructura que implementamos."
+  title="Software & Platforms | REUTER IT NETWORKS"
+  description="In-house platforms, network tools, custom management systems, and self-hosted infrastructure: the real software behind the infrastructure we deploy."
   ogImage="/images/desarrollo/mian-hero.png"
   bodyClass="dev-scope"
-  lang="es"
-  altLangHref="/en/software"
+  lang="en"
+  altLangHref="/desarrollo"
 >
   <style is:global>
     /* ============================================================
-       Sección "Software y Plataformas" — paleta propia (MiAulaNube)
-       Se mantiene el shell/tipografía del sitio; el acento cambia
-       de teal a azul/naranja solo dentro de .dev-scope.
+       "Software & Platforms" section — own palette (MiAulaNube)
+       Keeps the site's shell/typography; the accent shifts
+       from teal to blue/orange only within .dev-scope.
        ============================================================ */
     .dev-scope {
       --accent: #3b82f6;
@@ -133,7 +133,7 @@ const internalProjects = [
     .dev-project-media img { width: 100%; display: block; }
     .dev-project-media.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(59, 130, 246, 0.15); }
     .dev-project-media.two-up img { height: 260px; object-fit: cover; }
-    /* ---- carrusel de capturas de ComuCon ---- */
+    /* ---- ComuCon screenshot carousel ---- */
     .dev-project-media.comucon-slider {
       position: relative;
       display: flex;
@@ -203,11 +203,11 @@ const internalProjects = [
     </div>
     <div class="container">
       <div class="editorial-copy reveal" style="max-width:44rem;">
-        <p class="eyebrow">Software y Plataformas</p>
-        <h1>Software a medida, con la <span class="gradient-word">infraestructura real</span> detrás</h1>
+        <p class="eyebrow">Software & Platforms</p>
+        <h1>Custom software, backed by <span class="gradient-word">real infrastructure</span></h1>
         <p class="lead">
-          No solo instalamos redes: diseñamos, programamos y desplegamos los sistemas que corren sobre ellas
-          — y los mantenemos funcionando en producción, todos los días.
+          We don't just install networks: we design, build, and deploy the systems that run on top of them
+          — and we keep them running in production, every single day.
         </p>
         <div class="dev-stack-row">
           <span class="tag">Next.js / React</span>
@@ -226,23 +226,23 @@ const internalProjects = [
       <div class="dev-capabilities reveal">
         <div class="dev-cap">
           <span class="dev-cap-num">01</span>
-          <h3>Plataformas a medida</h3>
-          <p>LMS, sistemas de gestión y portales institucionales, construidos y desplegados de punta a punta — no solo la pantalla, también el backend y la base de datos.</p>
+          <h3>Custom platforms</h3>
+          <p>LMS, management systems, and institutional portals, built and deployed end to end — not just the screen, but the backend and database too.</p>
         </div>
         <div class="dev-cap">
           <span class="dev-cap-num">02</span>
-          <h3>Infraestructura y despliegue</h3>
-          <p>Servidores Linux, contenedores Docker, reverse proxy, bases de datos y backups — el mismo servidor real, no un demo aislado.</p>
+          <h3>Infrastructure & deployment</h3>
+          <p>Linux servers, Docker containers, reverse proxies, databases, and backups — the same real server, not an isolated demo.</p>
         </div>
         <div class="dev-cap">
           <span class="dev-cap-num">03</span>
-          <h3>DNS, correo y seguridad</h3>
-          <p>Dominios, DNS, entrega de correo transaccional, certificados y accesos — la parte invisible que hace que todo lo demás funcione.</p>
+          <h3>DNS, email & security</h3>
+          <p>Domains, DNS, transactional email delivery, certificates, and access — the invisible part that makes everything else work.</p>
         </div>
         <div class="dev-cap">
           <span class="dev-cap-num">04</span>
-          <h3>Automatización</h3>
-          <p>Scripts, integraciones y herramientas internas a medida para sacar de encima tareas repetitivas.</p>
+          <h3>Automation</h3>
+          <p>Scripts, integrations, and custom internal tools to take repetitive tasks off your plate.</p>
         </div>
       </div>
     </div>
@@ -251,15 +251,15 @@ const internalProjects = [
   <section class="page-section">
     <div class="container">
       <div class="section-heading editorial-heading reveal">
-        <p class="eyebrow">Proyectos</p>
-        <h2>Plataformas propias, herramientas técnicas e infraestructura</h2>
+        <p class="eyebrow">Projects</p>
+        <h2>In-house platforms, technical tools, and infrastructure</h2>
       </div>
 
       <div class="dev-projects">
 
         <div class="dev-category-heading reveal">
           <span>01</span>
-          <h3>Plataformas</h3>
+          <h3>Platforms</h3>
         </div>
 
         {platformProjects.map((project) => (
@@ -279,70 +279,70 @@ const internalProjects = [
           </article>
         ))}
 
-        <!-- ComuCon: contenido propio (capturas reales de la app, no encaja en la plantilla genérica) -->
+        <!-- ComuCon: own content (real app screenshots, doesn't fit the generic template) -->
         <article class="dev-project rev reveal" id="comucon">
           <div class="dev-project-media comucon-slider" id="comucon-slider">
             <div class="comucon-slide-track" id="comucon-slide-track">
-              <div class="comucon-slide"><img src="/images/desarrollo/comucon-1.jpg" alt="Pantalla de inicio de sesión de la app ComuCon" loading="lazy" /></div>
-              <div class="comucon-slide"><img src="/images/desarrollo/comucon-2.jpg" alt="Listado de comunicados y autorizaciones enviados en ComuCon, con estado de firma de los padres" loading="lazy" /></div>
-              <div class="comucon-slide"><img src="/images/desarrollo/comucon-3.jpg" alt="Detalle de una autorización con los padres que todavía no firmaron" loading="lazy" /></div>
-              <div class="comucon-slide"><img src="/images/desarrollo/comucon-4.jpg" alt="Selector para crear una nueva autorización o comunicado en ComuCon" loading="lazy" /></div>
+              <div class="comucon-slide"><img src="/images/desarrollo/comucon-1.jpg" alt="ComuCon app login screen" loading="lazy" /></div>
+              <div class="comucon-slide"><img src="/images/desarrollo/comucon-2.jpg" alt="List of announcements and authorizations sent in ComuCon, with parents' signature status" loading="lazy" /></div>
+              <div class="comucon-slide"><img src="/images/desarrollo/comucon-3.jpg" alt="Detail of an authorization showing which parents haven't signed yet" loading="lazy" /></div>
+              <div class="comucon-slide"><img src="/images/desarrollo/comucon-4.jpg" alt="Selector to create a new authorization or announcement in ComuCon" loading="lazy" /></div>
             </div>
-            <button class="comucon-nav prev" type="button" aria-label="Captura anterior">‹</button>
-            <button class="comucon-nav next" type="button" aria-label="Captura siguiente">›</button>
+            <button class="comucon-nav prev" type="button" aria-label="Previous screenshot">‹</button>
+            <button class="comucon-nav next" type="button" aria-label="Next screenshot">›</button>
             <div class="comucon-dots" id="comucon-dots"></div>
           </div>
           <div class="dev-project-copy">
-            <span class="dev-project-kicker">Comunicación institucional — Comunidad Conectada</span>
+            <span class="dev-project-kicker">Institutional communication — Connected Community</span>
             <h3>ComuCon</h3>
             <p>
-              Sistema de comunicación institucional jerárquica y en tiempo real, orientado principalmente a
-              instituciones educativas. Reemplaza procesos tradicionales como el cuaderno físico de comunicados
-              por una comunicación digital directa, trazable y organizada entre la institución y las familias.
+              A hierarchical, real-time institutional communication system, primarily aimed at educational
+              institutions. It replaces traditional processes like the physical notice notebook with direct,
+              traceable, organized digital communication between the institution and families.
             </p>
-            <div class="flow-diagram" role="img" aria-label="Flujo: Institución envía Comunicación o Autorización a la Familia, que responde en tiempo real y queda registrado en la Institución.">
+            <div class="flow-diagram" role="img" aria-label="Flow: the Institution sends a Communication or Authorization to the Family, who responds in real time, and it gets logged at the Institution.">
               <div class="flow-step">
                 <span class="flow-step-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h16"></path><path d="M8 5.5h8"></path><path d="M8 13.5h8"></path><path d="M6.5 17.5h11"></path><path d="M5.5 4h13a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 18.5 16h-13A1.5 1.5 0 0 1 4 14.5v-9A1.5 1.5 0 0 1 5.5 4Z"></path></svg>
                 </span>
-                <span>Institución</span>
+                <span>Institution</span>
               </div>
               <span class="flow-arrow" aria-hidden="true">→</span>
               <div class="flow-step">
                 <span class="flow-step-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6.5 4.5 10 8 13.5"></path><path d="M16 6.5 19.5 10 16 13.5"></path></svg>
                 </span>
-                <span>Comunicación / Autorización</span>
+                <span>Communication / Authorization</span>
               </div>
               <span class="flow-arrow" aria-hidden="true">→</span>
               <div class="flow-step">
                 <span class="flow-step-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 19.5c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"></path></svg>
                 </span>
-                <span>Familia</span>
+                <span>Family</span>
               </div>
               <span class="flow-arrow" aria-hidden="true">→</span>
               <div class="flow-step">
                 <span class="flow-step-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 11.8 11.3 13.5 14.7 10.1"></path><path d="M12 3.5 18.5 6v5.2c0 4.1-2.6 7.8-6.5 9.3-3.9-1.5-6.5-5.2-6.5-9.3V6L12 3.5Z"></path></svg>
                 </span>
-                <span>Respuesta registrada</span>
+                <span>Logged response</span>
               </div>
             </div>
-            <p style="margin-top: 1.25rem;"><strong>Comunicaciones:</strong> mensajes informativos que no requieren acción del receptor; la institución puede saber si el mensaje fue visto.</p>
-            <p><strong>Autorizaciones:</strong> mensajes que requieren una decisión del padre o tutor (autorizar / no autorizar). La respuesta llega en tiempo real a la institución, queda registrada y existe trazabilidad del consentimiento.</p>
+            <p style="margin-top: 1.25rem;"><strong>Communications:</strong> informational messages that don't require action from the recipient; the institution can see whether the message was read.</p>
+            <p><strong>Authorizations:</strong> messages that require a decision from the parent or guardian (authorize / do not authorize). The response reaches the institution in real time, gets logged, and there's full traceability of consent.</p>
             <div class="comucon-modes">
-              <span class="tag">App Android</span>
+              <span class="tag">Android App</span>
               <span class="tag">PWA</span>
-              <span class="tag">Instalable en PC</span>
-              <span class="tag">Instalable en iPhone/iOS (PWA)</span>
+              <span class="tag">Installable on PC</span>
+              <span class="tag">Installable on iPhone/iOS (PWA)</span>
             </div>
           </div>
         </article>
 
         <div class="dev-category-heading reveal">
           <span>02</span>
-          <h3>Herramientas técnicas</h3>
+          <h3>Technical tools</h3>
         </div>
 
         {toolProjects.map((project) => (
@@ -364,7 +364,7 @@ const internalProjects = [
 
         <div class="dev-category-heading reveal">
           <span>03</span>
-          <h3>Sistemas internos y a medida</h3>
+          <h3>Internal & custom systems</h3>
         </div>
 
         {internalProjects.map((project) => (
@@ -385,42 +385,42 @@ const internalProjects = [
 
         <div class="dev-category-heading reveal">
           <span>04</span>
-          <h3>Infraestructura</h3>
+          <h3>Infrastructure</h3>
         </div>
 
-        <!-- Self-hosted: contenido propio (pasos de recuperación, no encaja en la plantilla genérica) -->
+        <!-- Self-hosted: own content (recovery steps, doesn't fit the generic template) -->
         <article class="dev-project reveal" id="self-hosted">
           <div class="dev-project-media">
             <img
               src="/images/desarrollo/self-hosted-arquitectura.png"
-              alt="Diagrama de la arquitectura self-hosted de backup, recuperación ante desastres y acceso remoto: instituciones conectadas por Tailscale VPN a un servidor propio con UrBackup y RustDesk self-hosted, con acceso remoto para personal administrativo y soporte técnico."
+              alt="Diagram of the self-hosted backup, disaster recovery, and remote access architecture: institutions connected via Tailscale VPN to our own server running UrBackup and self-hosted RustDesk, with remote access for administrative staff and technical support."
               loading="lazy"
             />
           </div>
           <div class="dev-project-copy">
-            <span class="dev-project-kicker">Backup, disaster recovery y acceso remoto</span>
-            <h3>Infraestructura Self-Hosted</h3>
+            <span class="dev-project-kicker">Backup, disaster recovery & remote access</span>
+            <h3>Self-Hosted Infrastructure</h3>
             <p>
-              Combinamos <strong>Tailscale</strong> (red privada que conecta de forma segura los equipos de
-              distintas instituciones con nuestro servidor), <strong>UrBackup</strong> (servidor central de
-              backups que administramos nosotros, con clientes en cada equipo remoto haciendo copias automáticas
-              a través de esa red privada) y <strong>RustDesk self-hosted</strong> (servidor propio de acceso
-              remoto, usado tanto para soporte técnico como para que personal autorizado de una institución
-              trabaje desde su casa contra su computadora física en el edificio).
+              We combine <strong>Tailscale</strong> (a private network that securely connects devices from
+              different institutions to our server), <strong>UrBackup</strong> (a central backup server that
+              we manage ourselves, with clients on each remote device making automatic copies over that
+              private network), and self-hosted <strong>RustDesk</strong> (our own remote access server, used
+              both for technical support and so authorized institution staff can work from home against their
+              physical computer at the building).
             </p>
             <p>
-              Tailscale, UrBackup y RustDesk son herramientas de terceros que integramos y administramos dentro
-              de infraestructura propia — nuestro valor está en el diseño, la implementación, la seguridad,
-              la operación y el soporte de todo el conjunto, no en el desarrollo de ese software.
+              Tailscale, UrBackup, and RustDesk are third-party tools that we integrate and manage within our
+              own infrastructure — our value lies in the design, implementation, security, operation, and
+              support of the whole set, not in developing that software ourselves.
             </p>
-            <p><strong>Recuperación ante falla de disco</strong> — no es "backup de archivos", es disaster recovery del puesto completo:</p>
+            <p><strong>Disk failure recovery</strong> — this isn't "file backup," it's full workstation disaster recovery:</p>
             <ol class="recovery-steps">
-              <li>Falla el disco de una computadora de la institución.</li>
-              <li>Se reemplaza por un disco nuevo.</li>
-              <li>Se inicia el equipo con un pendrive/USB de recuperación.</li>
-              <li>El equipo se conecta a nuestro servidor.</li>
-              <li>Se recupera la última copia disponible.</li>
-              <li>El puesto vuelve a estar operativo, con el tiempo de inactividad reducido al mínimo.</li>
+              <li>A computer's disk fails at the institution.</li>
+              <li>It's replaced with a new disk.</li>
+              <li>The computer is booted from a recovery USB drive.</li>
+              <li>The computer connects to our server.</li>
+              <li>The latest available backup is restored.</li>
+              <li>The workstation is back in operation, with downtime reduced to a minimum.</li>
             </ol>
           </div>
         </article>
@@ -432,18 +432,18 @@ const internalProjects = [
   <section class="page-section home-cta dev-cta" style="border-top:1px solid var(--line);">
     <div class="container cta-row">
       <div class="cta-copy reveal">
-        <p class="eyebrow">Contacto directo</p>
-        <h2>¿Necesitás un sistema a medida, o poner en orden lo que ya tenés funcionando?</h2>
+        <p class="eyebrow">Direct contact</p>
+        <h2>Need a custom system, or want to put what you already have in order?</h2>
       </div>
       <div class="actions reveal">
-        <a class="button button-primary" href="/contacto">Contar el proyecto</a>
-        <a class="button button-secondary" href="https://wa.me/5493512803872" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+        <a class="button button-primary" href="/en/contact">Tell us about your project</a>
+        <a class="button button-secondary" href="https://wa.me/5493512803872" target="_blank" rel="noreferrer">Talk on WhatsApp</a>
       </div>
     </div>
   </section>
 
   <script>
-    // Carrusel de capturas de ComuCon: una imagen a la vez, flechas + dots + autoplay.
+    // ComuCon screenshot carousel: one image at a time, arrows + dots + autoplay.
     (function () {
       const slider = document.getElementById("comucon-slider");
       const track = document.getElementById("comucon-slide-track");
@@ -460,7 +460,7 @@ const internalProjects = [
         const dot = document.createElement("button");
         dot.type = "button";
         dot.className = "comucon-dot";
-        dot.setAttribute("aria-label", `Ir a la captura ${i + 1}`);
+        dot.setAttribute("aria-label", `Go to screenshot ${i + 1}`);
         dot.addEventListener("click", () => {
           goTo(i);
           restartAutoplay();

@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { company } from "../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { company } from "../../data/site.en";
 ---
 
 <BaseLayout
-  title="Contacto | REUTER IT NETWORKS"
-  description="Solicitar presupuesto o coordinar una evaluación con REUTER IT NETWORKS."
-  lang="es"
-  altLangHref="/en/contact"
+  title="Contact | REUTER IT NETWORKS"
+  description="Request a quote or schedule an assessment with REUTER IT NETWORKS."
+  lang="en"
+  altLangHref="/contacto"
 >
   <section class="hero">
     <div class="hero-bg" aria-hidden="true">
@@ -17,15 +17,15 @@ import { company } from "../data/site";
     </div>
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Contacto</p>
-        <h1>Contanos qué necesitás resolver y seguimos por WhatsApp.</h1>
+        <p class="eyebrow">Contact</p>
+        <h1>Tell us what you need to solve and we'll continue over WhatsApp.</h1>
         <p class="lead">
-          La idea es simple: entender rápido el problema y avanzar con una conversación clara.
+          The idea is simple: quickly understand the problem and move forward with a clear conversation.
         </p>
       </div>
       <aside class="hero-panel reveal">
         <div class="panel-stack">
-          <span class="panel-chip">Canales directos</span>
+          <span class="panel-chip">Direct channels</span>
           <ul class="hero-list">
             <li><a href={company.whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a></li>
             <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
@@ -39,47 +39,47 @@ import { company } from "../data/site";
   <section class="page-section">
     <div class="container contact-grid">
       <article class="contact-card reveal">
-        <p class="eyebrow">Formulario rápido</p>
-        <h2>Este primer contacto sale directo por WhatsApp.</h2>
+        <p class="eyebrow">Quick form</p>
+        <h2>This first contact goes straight out through WhatsApp.</h2>
 
         <form class="contact-form" id="contact-form">
           <div class="field">
-            <label for="name">Nombre</label>
-            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
           </div>
 
           <div class="field">
-            <label for="organization">Institución o empresa</label>
-            <input id="organization" name="organization" type="text" placeholder="Nombre de la institución o empresa" />
+            <label for="organization">Institution or business</label>
+            <input id="organization" name="organization" type="text" placeholder="Name of the institution or business" />
           </div>
 
           <div class="field">
-            <label for="locality">Localidad</label>
-            <input id="locality" name="locality" type="text" placeholder="Ciudad o localidad" />
+            <label for="locality">Location</label>
+            <input id="locality" name="locality" type="text" placeholder="City or town" />
           </div>
 
           <div class="field">
-            <label for="need">Necesidad principal</label>
+            <label for="need">Main need</label>
             <textarea
               id="need"
               name="need"
-              placeholder="Contanos brevemente el problema"
+              placeholder="Briefly tell us the problem"
               required
             ></textarea>
           </div>
 
-          <button class="button button-primary" type="submit">Enviar por WhatsApp</button>
+          <button class="button button-primary" type="submit">Send via WhatsApp</button>
           <p class="status" id="form-status" aria-live="polite"></p>
         </form>
       </article>
 
       <aside class="contact-card reveal">
-        <p class="eyebrow">Base operativa</p>
-        <h2>Córdoba, con capacidad de movernos según el proyecto.</h2>
+        <p class="eyebrow">Home base</p>
+        <h2>Córdoba, with the ability to travel depending on the project.</h2>
         <ul class="check-list">
-          <li>WhatsApp como canal principal.</li>
-          <li>Email para seguimiento y documentación.</li>
-          <li>Desplazamiento coordinado según necesidad técnica.</li>
+          <li>WhatsApp as the main channel.</li>
+          <li>Email for follow-up and documentation.</li>
+          <li>On-site visits coordinated according to technical need.</li>
         </ul>
       </aside>
     </div>
@@ -100,24 +100,24 @@ import { company } from "../data/site";
 
       if (!name || !need) {
         if (status) {
-          status.textContent = "Completá al menos tu nombre y la necesidad principal.";
+          status.textContent = "Please fill in at least your name and your main need.";
         }
         return;
       }
 
       const lines = [
-        "Hola, quiero consultar por un proyecto.",
-        `Nombre: ${name}`,
-        organization ? `Institución o empresa: ${organization}` : "",
-        locality ? `Localidad: ${locality}` : "",
-        `Necesidad: ${need}`
+        "Hi, I'd like to ask about a project.",
+        `Name: ${name}`,
+        organization ? `Institution or business: ${organization}` : "",
+        locality ? `Location: ${locality}` : "",
+        `Need: ${need}`
       ].filter(Boolean);
 
       const href = `${whatsappUrl}?text=${encodeURIComponent(lines.join("\n"))}`;
       window.open(href, "_blank", "noopener,noreferrer");
 
       if (status) {
-        status.textContent = "Abrimos WhatsApp con tu mensaje listo para enviar.";
+        status.textContent = "We've opened WhatsApp with your message ready to send.";
       }
     });
   </script>

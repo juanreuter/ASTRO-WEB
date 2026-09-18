@@ -1,44 +1,44 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { cases } from "../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/site.en";
 
 const villaCabreraSlides = [
   {
     image: "/images/trabajos/villa-cabrera-01.jpeg",
-    alt: "Pantalla digital de 75 pulgadas instalada en un colegio de barrio Villa Cabrera."
+    alt: "75-inch digital screen installed at a school in the Villa Cabrera neighborhood."
   },
   {
     image: "/images/trabajos/villa-cabrera-02.jpeg",
-    alt: "Vista de la instalación de la pantalla digital de 75 pulgadas en Villa Cabrera."
+    alt: "View of the 75-inch digital screen installation in Villa Cabrera."
   },
   {
     image: "/images/trabajos/villa-cabrera-03.jpeg",
-    alt: "Conexión y ajuste de la pantalla digital de 75 pulgadas en el colegio de Villa Cabrera."
+    alt: "Connecting and adjusting the 75-inch digital screen at the Villa Cabrera school."
   },
   {
     image: "/images/trabajos/villa-cabrera-04.jpeg",
-    alt: "Pantalla digital conectada y montada en aula de Villa Cabrera."
+    alt: "Digital screen connected and mounted in a classroom in Villa Cabrera."
   },
   {
     image: "/images/trabajos/villa-cabrera-05.jpeg",
-    alt: "Proceso de instalación de pantalla digital y vinculación a red en Villa Cabrera."
+    alt: "Digital screen installation process and network setup in Villa Cabrera."
   },
   {
     image: "/images/trabajos/villa-cabrera-06.jpeg",
-    alt: "Pantalla digital instalada en colegio de barrio Villa Cabrera."
+    alt: "Digital screen installed at a school in the Villa Cabrera neighborhood."
   },
   {
     image: "/images/trabajos/villa-cabrera-07.jpeg",
-    alt: "Vista final de la instalación y conexión de pantalla digital de 75 pulgadas en Villa Cabrera."
+    alt: "Final view of the 75-inch digital screen installation and connection in Villa Cabrera."
   }
 ];
 ---
 
 <BaseLayout
-  title="Casos reales | REUTER IT NETWORKS"
-  description="Casos y proyectos que muestran el enfoque integral de REUTER IT NETWORKS."
-  lang="es"
-  altLangHref="/en/case-studies"
+  title="Case Studies | REUTER IT NETWORKS"
+  description="Cases and projects that show REUTER IT NETWORKS' comprehensive approach."
+  lang="en"
+  altLangHref="/casos-reales"
 >
   <section class="hero">
     <div class="hero-bg" aria-hidden="true">
@@ -48,20 +48,20 @@ const villaCabreraSlides = [
     </div>
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Casos reales</p>
-        <h1>La mejor forma de demostrar criterio técnico es mostrar cómo se resolvieron problemas concretos.</h1>
+        <p class="eyebrow">Case studies</p>
+        <h1>The best way to demonstrate technical judgment is to show how real problems were solved.</h1>
         <p class="lead">
-          Estos proyectos muestran instalaciones, soporte y puestas en marcha reales en
-          instituciones y empresas donde hacía falta resolver bien, documentar y dejar todo funcionando.
+          These projects show real installations, support, and commissioning work at institutions and
+          businesses where things needed to be solved properly, documented, and left fully working.
         </p>
       </div>
       <aside class="hero-panel reveal">
         <div class="panel-stack">
-          <span class="panel-chip">Lo que se ve en cada caso</span>
+          <span class="panel-chip">What you'll see in each case</span>
           <ul class="hero-list">
-            <li>Problema concreto en contexto institucional.</li>
-            <li>Instalación, configuración o soporte ejecutado en sitio.</li>
-            <li>Resultado final con criterio técnico y foco operativo.</li>
+            <li>A concrete problem in an institutional context.</li>
+            <li>Installation, configuration, or support carried out on-site.</li>
+            <li>A final result backed by technical judgment and operational focus.</li>
           </ul>
         </div>
       </aside>
@@ -73,10 +73,10 @@ const villaCabreraSlides = [
       <article class="card case-featured-story reveal">
         <div class="case-featured-copy">
           <p class="eyebrow">Villa Cabrera, Córdoba Capital</p>
-          <h2>Instalación y conexión a red de pantalla digital de 75 pulgadas.</h2>
+          <h2>Installation and network connection of a 75-inch digital screen.</h2>
           <p>
-            Trabajo reciente en colegio de barrio Villa Cabrera, con montaje, conexión a red y
-            puesta en marcha de pantalla digital para dejarla lista para uso real en aula.
+            A recent project at a school in the Villa Cabrera neighborhood, with mounting, network
+            connection, and commissioning of a digital screen to leave it ready for real classroom use.
           </p>
         </div>
 
@@ -92,14 +92,14 @@ const villaCabreraSlides = [
           </div>
 
           <div class="mini-gallery-controls">
-            <button class="slider-button" type="button" id="villa-cabrera-prev" aria-label="Foto anterior">
-              Anterior
+            <button class="slider-button" type="button" id="villa-cabrera-prev" aria-label="Previous photo">
+              Previous
             </button>
 
             <div class="work-slider-dots" id="villa-cabrera-dots"></div>
 
-            <button class="slider-button" type="button" id="villa-cabrera-next" aria-label="Foto siguiente">
-              Siguiente
+            <button class="slider-button" type="button" id="villa-cabrera-next" aria-label="Next photo">
+              Next
             </button>
           </div>
         </div>
@@ -122,21 +122,21 @@ const villaCabreraSlides = [
                     alt={item.hoverImageAlt ?? item.imageAlt}
                     loading="lazy"
                   />
-                  <span class="case-swap-chip">Ver otra vista</span>
+                  <span class="case-swap-chip">See another view</span>
                 </>
               )}
             </div>
           ) : (
             <div class="case-placeholder">
-              <small>Proyecto destacado</small>
+              <small>Featured project</small>
               <strong>{item.location}</strong>
             </div>
           )}
           {item.video && (
             <div class="case-video-wrap">
               <div class="case-proof">
-                <span>Prueba real en sitio</span>
-                <strong>Video de funcionamiento</strong>
+                <span>Real on-site proof</span>
+                <strong>Working demo video</strong>
               </div>
               <video
                 class="case-video"
@@ -146,16 +146,16 @@ const villaCabreraSlides = [
                 poster={item.videoPoster ?? item.image}
               >
                 <source src={item.video} type="video/mp4" />
-                Tu navegador no soporta video HTML5.
+                Your browser doesn't support HTML5 video.
               </video>
             </div>
           )}
           <div class="case-body">
             <p class="eyebrow">{item.location}</p>
             <h3>{item.title}</h3>
-            <p><strong>Problema:</strong> {item.challenge}</p>
-            <p><strong>Solución:</strong> {item.solution}</p>
-            <p><strong>Resultado:</strong> {item.outcome}</p>
+            <p><strong>Challenge:</strong> {item.challenge}</p>
+            <p><strong>Solution:</strong> {item.solution}</p>
+            <p><strong>Outcome:</strong> {item.outcome}</p>
           </div>
         </article>
       ))}
@@ -180,7 +180,7 @@ const villaCabreraSlides = [
         const dot = document.createElement("button");
         dot.type = "button";
         dot.className = "slider-dot";
-        dot.setAttribute("aria-label", `Ir a la foto ${index + 1}`);
+        dot.setAttribute("aria-label", `Go to photo ${index + 1}`);
         dot.addEventListener("click", () => {
           updateSlider(index);
           restartAutoplay();

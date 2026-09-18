@@ -81,7 +81,7 @@ export const differentiators = [
   "Implementación y acompañamiento con lenguaje claro para directivos y responsables operativos."
 ];
 
-interface CaseItem {
+export interface CaseItem {
   title: string;
   location: string;
   image?: string;

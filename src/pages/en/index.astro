@@ -1,17 +1,17 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { company, partnerBrands, ownSolutions } from "../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { company, partnerBrands, ownSolutions } from "../../data/site.en";
 
 const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
-// La cinta se repite dos veces para que el marquee haga loop sin cortes.
+// The ribbon repeats twice so the marquee loops without gaps.
 const ribbonBrands = [...partnerBrands, ...partnerBrands];
 ---
 
 <BaseLayout
-  title="REUTER IT NETWORKS | Soluciones tecnológicas integrales"
-  description="Redes, servidores, seguridad, software y automatización para instituciones y empresas en Córdoba."
-  lang="es"
-  altLangHref="/en"
+  title="REUTER IT NETWORKS | Comprehensive Technology Solutions"
+  description="Networks, servers, security, software, and automation for institutions and businesses in Córdoba, Argentina."
+  lang="en"
+  altLangHref="/"
 >
   <section class="hero editorial-hero home-hero">
     <div class="hero-bg" aria-hidden="true">
@@ -23,43 +23,43 @@ const ribbonBrands = [...partnerBrands, ...partnerBrands];
     </div>
     <div class="container editorial-grid">
       <div class="editorial-copy reveal">
-        <p class="eyebrow">Infraestructura que respalda la operación diaria</p>
+        <p class="eyebrow">Infrastructure that backs up daily operations</p>
         <h1>
-          Soluciones tecnológicas
-          <span class="gradient-word">integrales</span>
-          para instituciones y empresas
+          Comprehensive technology
+          <span class="gradient-word">solutions</span>
+          for institutions and businesses
         </h1>
         <p class="lead">
-          Redes, servidores, cámaras y software integrados en una única solución confiable.
+          Networks, servers, cameras, and software integrated into a single, reliable solution.
         </p>
 
         <div class="actions">
-          <a class="button button-primary" href="/contacto">Solicitar presupuesto</a>
+          <a class="button button-primary" href="/en/contact">Request a quote</a>
           <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
-            Hablar por WhatsApp
+            Talk to us on WhatsApp
           </a>
         </div>
 
         <ul class="inline-proof">
-          <li>Diagnóstico antes que reemplazo.</li>
-          <li>Una sola estrategia para varias capas técnicas.</li>
-          <li>Criterio real para instituciones y empresas.</li>
+          <li>Diagnosis before replacement.</li>
+          <li>One strategy across several technical layers.</li>
+          <li>Real-world judgment for institutions and businesses.</li>
         </ul>
       </div>
 
       <div class="editorial-stage editorial-stage-full reveal">
         <figure class="stage-primary stage-primary-large" data-lightbox>
-          <img src="/images/trabajos/home-equipo-rack.png" alt="Equipo técnico de REUTER frente a rack instalado y cableado en sitio." />
+          <img src="/images/trabajos/home-equipo-rack.png" alt="REUTER's technical team in front of a rack installed and cabled on-site." />
           <figcaption>
-            <small>Trabajo real en sitio</small>
-            <strong>Testeo, revisión y puesta a punto antes de dar por resuelto un problema.</strong>
+            <small>Real work on-site</small>
+            <strong>Testing, review, and fine-tuning before calling a problem solved.</strong>
           </figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="brand-ribbon-section" aria-label="Marcas con las que trabajamos">
+  <section class="brand-ribbon-section" aria-label="Brands we work with">
     <div class="container">
       <div class="brand-ribbon-mask">
         <div class="brand-ribbon-track">
@@ -74,13 +74,13 @@ const ribbonBrands = [...partnerBrands, ...partnerBrands];
   <section class="page-section home-thesis">
     <div class="container thesis-row">
       <div class="thesis-copy reveal">
-        <p class="eyebrow">Casos reales</p>
-        <h2>No arrancamos diciendo: "Hay que comprar todo de nuevo", sino diagnosticando el problema.</h2>
+        <p class="eyebrow">Case studies</p>
+        <h2>We don't start by saying "you need to buy everything new" — we start by diagnosing the problem.</h2>
       </div>
 
       <div class="thesis-actions reveal">
-        <span class="mono-note">Cuando el trabajo se puede mostrar, la decisión se vuelve más clara.</span>
-        <a class="button button-secondary" href="/casos-reales">Ver todos los casos</a>
+        <span class="mono-note">When the work can be shown, the decision becomes a lot clearer.</span>
+        <a class="button button-secondary" href="/en/case-studies">See all case studies</a>
       </div>
     </div>
   </section>
@@ -88,9 +88,9 @@ const ribbonBrands = [...partnerBrands, ...partnerBrands];
   <section class="page-section">
     <div class="container">
       <div class="section-heading editorial-heading reveal">
-        <p class="eyebrow">Soluciones propias</p>
-        <h2>Nuestras soluciones</h2>
-        <p>Herramientas nacidas de problemas que encontramos trabajando con instituciones reales.</p>
+        <p class="eyebrow">In-house solutions</p>
+        <h2>Our solutions</h2>
+        <p>Tools born from problems we've found working with real institutions.</p>
       </div>
 
       <div class="solutions-grid reveal">
@@ -106,7 +106,7 @@ const ribbonBrands = [...partnerBrands, ...partnerBrands];
               <ul class="solution-bullets">
                 {solution.bullets.map((bullet) => <li>{bullet}</li>)}
               </ul>
-              <a class="solution-cta" href={`/desarrollo#${solution.slug}`}>Ver solución →</a>
+              <a class="solution-cta" href={`/en/software#${solution.slug}`}>See solution →</a>
             </div>
           </article>
         ))}
@@ -117,21 +117,21 @@ const ribbonBrands = [...partnerBrands, ...partnerBrands];
   <section class="page-section home-cta">
     <div class="container cta-row">
       <div class="cta-copy reveal">
-        <p class="eyebrow">Contacto directo</p>
-        <h2>Si hoy dependés de demasiados parches, conversemos antes de que el problema crezca.</h2>
+        <p class="eyebrow">Direct contact</p>
+        <h2>If you're relying on too many patches today, let's talk before the problem grows.</h2>
       </div>
 
       <div class="actions reveal">
-        <a class="button button-primary" href="/contacto">Pedir diagnóstico</a>
+        <a class="button button-primary" href="/en/contact">Request a diagnosis</a>
         <a class="button button-secondary" href={company.whatsappHref} target="_blank" rel="noreferrer">
-          Hablar ahora por WhatsApp
+          Talk now on WhatsApp
         </a>
       </div>
     </div>
   </section>
 
   <script>
-    // Partículas decorativas del hero de Home.
+    // Decorative particles for the Home hero.
     (function () {
       const host = document.getElementById("hero-particles");
       if (!host) return;
@@ -148,5 +148,3 @@ const ribbonBrands = [...partnerBrands, ...partnerBrands];
     })();
   </script>
 </BaseLayout>
-
-

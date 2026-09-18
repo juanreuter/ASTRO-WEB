@@ -3,6 +3,13 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://reuter.com.ar",
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   vite: {
     resolve: {
       alias: {

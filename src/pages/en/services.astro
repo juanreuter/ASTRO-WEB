@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { services, coverage } from "../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { services, coverage } from "../../data/site.en";
 
 const icons = {
   network: [
@@ -45,36 +45,36 @@ const icons = {
 const territoryProjects = [
   {
     label: "Córdoba Capital",
-    title: "Trabajo urbano y respuesta en sitio",
+    title: "Urban work and on-site response",
     image: "/images/trabajos/instalacion-altura.jpg",
-    alt: "Instalación de cámara en un gimnasio escolar de Córdoba Capital.",
+    alt: "Camera installation in a school gymnasium in Córdoba Capital.",
     description:
-      "En Córdoba Capital trabajamos tanto en instituciones educativas como en comercios y oficinas. Un ejemplo claro fue la instalación de cámaras en el gimnasio de una escuela de Barrio Crisol, resolviendo montaje en altura y puesta en servicio en un entorno real de uso diario."
+      "In Córdoba Capital we work with educational institutions as well as businesses and offices. One clear example was installing cameras in the gymnasium of a school in Barrio Crisol, handling the mounting at height and commissioning in a real, everyday-use environment."
   },
   {
-    label: "Interior provincial",
-    title: "Implementaciones planificadas fuera de capital",
+    label: "Provincial interior",
+    title: "Planned deployments outside the capital",
     image: "/images/trabajos/rack-y-cableado.jpg",
-    alt: "Rack y cableado estructurado instalados en una escuela del interior de Córdoba.",
+    alt: "Rack and structured cabling installed at a school in the interior of Córdoba.",
     description:
-      "En el interior de Córdoba también ejecutamos proyectos completos. En una escuela de Cosquín armamos rack, patcheras y distribución de red hacia antenas WiFi y dispositivos finales, dejando una base técnica mucho más ordenada y mantenible."
+      "We also carry out full projects in the interior of Córdoba. At a school in Cosquín we built a rack with patch panels and network distribution to Wi-Fi access points and end devices, leaving a far more organized and maintainable technical foundation."
   },
   {
-    label: "Otras provincias",
-    title: "Proyectos convocados por experiencia específica",
+    label: "Other provinces",
+    title: "Projects driven by specific expertise",
     image: "/images/trabajos/formosa-pizarra-tactil.jpg",
-    alt: "Instalación de pizarra táctil y proyector en Formosa.",
+    alt: "Installation of an interactive whiteboard and projector in Formosa.",
     description:
-      "También podemos trabajar fuera de la provincia cuando el proyecto lo justifica. En Formosa instalamos pizarras táctiles y cañones proyectores para Los Salesianos, en un trabajo solicitado desde Buenos Aires por la experiencia previa en el manejo, configuración y prueba de equipos delicados."
+      "We can also work outside the province when the project justifies it. In Formosa we installed interactive whiteboards and projectors for Los Salesianos, in a job requested from Buenos Aires because of our prior experience handling, configuring, and testing delicate equipment."
   }
 ];
 ---
 
 <BaseLayout
-  title="Servicios | REUTER IT NETWORKS"
-  description="Redes, seguridad, servidores, software y automatización con enfoque integral."
-  lang="es"
-  altLangHref="/en/services"
+  title="Services | REUTER IT NETWORKS"
+  description="Networks, security, servers, software, and automation with a comprehensive approach."
+  lang="en"
+  altLangHref="/servicios"
 >
   <section class="hero editorial-hero services-editorial">
     <div class="hero-bg" aria-hidden="true">
@@ -84,29 +84,29 @@ const territoryProjects = [
     </div>
     <div class="container editorial-grid services-editorial-grid">
       <div class="editorial-copy reveal">
-        <p class="eyebrow">Servicios</p>
-        <h1>Nos especializamos en diagnosticar problemas complejos y encontrar soluciones donde otros proveedores no llegan.</h1>
+        <p class="eyebrow">Services</p>
+        <h1>We specialize in diagnosing complex problems and finding solutions where other providers stop short.</h1>
         <p class="lead">
-          No entramos a resolver una parte aislada y desaparecer. Ordenamos la base técnica,
-          integramos lo que haga falta y dejamos una estructura más clara para operar y crecer.
+          We don't come in to fix one isolated piece and disappear. We organize the technical foundation,
+          integrate whatever is needed, and leave a clearer structure to operate and grow on.
         </p>
 
         <div class="tag-row">
-          <span class="tag">Escuelas e institutos</span>
-          <span class="tag">Hoteles</span>
-          <span class="tag">Clínicas y sanatorios</span>
-          <span class="tag">Comercios y oficinas</span>
+          <span class="tag">Schools & institutes</span>
+          <span class="tag">Hotels</span>
+          <span class="tag">Clinics & hospitals</span>
+          <span class="tag">Businesses & offices</span>
         </div>
       </div>
 
       <figure class="diagnostic-figure diagnostic-figure-hero reveal">
         <img
           src="/images/trabajos/home-topologia-software-propio.png"
-          alt="Escaneo y detección de topología profunda de red con software propio de REUTER IT."
+          alt="Deep network topology scanning and detection with REUTER IT's in-house software."
         />
         <figcaption>
-          <small>Servicio exclusivo</small>
-          <strong>Escaneo y detección de Topología Profunda con Software propio.</strong>
+          <small>Exclusive service</small>
+          <strong>Deep topology scanning and detection with our own software.</strong>
         </figcaption>
       </figure>
     </div>
@@ -115,8 +115,8 @@ const territoryProjects = [
   <section class="page-section services-list-section">
     <div class="container">
       <div class="section-heading editorial-heading reveal">
-        <p class="eyebrow">Qué hacemos</p>
-        <h2>Seis áreas que se conectan entre sí.</h2>
+        <p class="eyebrow">What we do</p>
+        <h2>Six areas that connect with each other.</h2>
       </div>
 
       <div class="service-listing reveal">
@@ -140,11 +140,11 @@ const territoryProjects = [
     </div>
   </section>
 
-  <section class="page-section territory-section" id="alcance">
+  <section class="page-section territory-section" id="coverage">
     <div class="container">
       <div class="section-heading editorial-heading reveal">
-        <p class="eyebrow">Alcance real</p>
-        <h2>Trabajamos en capital, en el interior y también fuera de la provincia.</h2>
+        <p class="eyebrow">Real reach</p>
+        <h2>We work in the capital, in the interior, and also outside the province.</h2>
       </div>
 
       <div class="story-rows">
@@ -169,33 +169,33 @@ const territoryProjects = [
         {coverage.map((item) => (
           <article class="metric">
             <strong>{item}</strong>
-            <p>Respuesta según el alcance técnico, logístico y operativo del proyecto.</p>
+            <p>Response time depends on the technical, logistical, and operational scope of the project.</p>
           </article>
         ))}
       </div>
 
       <div class="two-column reveal" style="margin-top: 3rem;">
         <div class="section-heading tight">
-          <p class="eyebrow">Criterio comercial</p>
-          <h3>Mostrar alcance territorial también transmite seriedad.</h3>
+          <p class="eyebrow">Business approach</p>
+          <h3>Showing territorial reach also conveys seriousness.</h3>
           <p>
-            Para una institución o empresa, saber que pueden responder fuera de una sola ciudad
-            reduce incertidumbre y mejora la percepción de respaldo. Eso incluye proyectos ejecutados
-            en otras provincias, como instalaciones realizadas en Formosa.
+            For an institution or business, knowing that we can respond outside of a single city
+            reduces uncertainty and improves the perception of backup support. That includes projects carried out
+            in other provinces, such as installations completed in Formosa.
           </p>
         </div>
         <div class="signal-panel">
           <div class="signal-row">
-            <span>Base principal</span>
+            <span>Home base</span>
             <strong>Córdoba</strong>
           </div>
           <div class="signal-row">
-            <span>Interior provincial</span>
-            <strong>Trabajos planificados y soporte coordinado</strong>
+            <span>Provincial interior</span>
+            <strong>Planned deployments and coordinated support</strong>
           </div>
           <div class="signal-row">
-            <span>Proyectos nacionales</span>
-            <strong>Según necesidad técnica, viabilidad operativa y alcance del proyecto</strong>
+            <span>Nationwide projects</span>
+            <strong>Depending on technical need, operational feasibility, and project scope</strong>
           </div>
         </div>
       </div>
